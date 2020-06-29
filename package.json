@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "name": "folktradgarden",
+  "description": "Static gatsby webapplication for the non-profit organization Folkträdgården",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kim Gustafsson <kim.gustafsson@live.com>, Max Bekkhus <maxx_b@hotmail.com>",
   "dependencies": {
     "gatsby": "^2.23.10",
     "gatsby-image": "^2.4.8",
@@ -24,7 +23,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "GNU GPL v2",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -36,9 +35,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/Folktradgarden/static-web"
   }
 }
