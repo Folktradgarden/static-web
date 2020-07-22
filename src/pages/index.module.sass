@@ -1,0 +1,92 @@
+@import ../global-styles/fonts
+@import ../global-styles/colors
+@import ../global-styles/effects
+    
+.root
+    display: flex
+    justify-content: center
+    height: 100vh
+    width: 100vw
+    margin: 0
+    padding: 0
+
+.rootContainer
+    display: flex
+    margin: 0
+    padding: 0
+    height: 100%
+    width: 90%
+
+.leftRootContainer
+    width: 50%
+    display: grid
+    grid-template-rows: [rows-top] auto [rows-second] min-content [rows-third] auto [rows-end]
+    grid-template-columns: [columns-left] auto [columns-second] auto [columns-end]
+
+.rightRootContainer
+    border-color: black
+    width: 50%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+
+.contentContainer
+    margin: 0
+    padding: 0
+
+.contentParagraph
+    margin: 0
+    margin-left: 4%
+    padding: 0
+    font-family: $fontMain
+    text-align: left
+    font-size: 2vw
+    color: $secondary-color
+    font-weight: 600
+
+.headerContainer
+    margin: 0
+    padding: 0
+    display: flex
+    align-items: flex-end
+    height: auto
+
+.header
+    margin: 0
+    margin-bottom: 2%
+    padding: 0
+    font-family: $fontMain
+    font-size: 2.8vw
+    color: $secondary-color
+    text-align: left
+
+    a
+        color: $primary-accent-color
+        text-decoration: none
+
+.logo
+    width: 80%
+    height: auto
+
+.image
+    border-radius: 20px
+    border: 7px solid $secondary-color
+
+.imageContainer
+    height: auto
+    width: 100%
+
+.promptContainer
+    display: flex
+    margin: 0
+    padding: 0
+    grid-column-start: 1
+    grid-column-end: span columns-end
+    grid-row-start: 3
+    grid-row-end: span rows-end
+
+.promptParagraph
+    font-family: $fontMain
+    font-size: 2vw
+    color: $secondary-color

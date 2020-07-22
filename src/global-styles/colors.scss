@@ -1,0 +1,15 @@
+$primary-color: #0000ff;
+$dark-secondary-color: #6a381fff;
+$secondary-color: #5f321cff;
+$primary-accent-color: #498000ff;
+$background-color: #E7DFC6ff;
+$facebook-blue: #202C59ff;
+$instagram-pink: #B61641ff;
+
+
+:export {
+    secondaryColor: $secondary-color;
+    backgroundColor: $background-color;
+    facebookBlue: $facebook-blue;
+    instagramPink: $instagram-pink;
+}
