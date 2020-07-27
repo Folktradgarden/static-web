@@ -42,8 +42,7 @@ const IndexPage = () => {
 
   const paragraph =
     <p className={styles.contentParagraph}>
-      Folkträdgården är en ideell förening vars ändamål är att skapa
-      sammanhang som verkar för social och ekologisk hållbarhet.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, a fuga eligendi eveniet maxime expedita eum. Enim omnis dolor id fugiat, perspiciatis ducimus nobis natus quos debitis autem laboriosam adipisci tempore, reprehenderit suscipit quidem odit vitae accusantium eos cumque. Quisquam, quos consequatur? Incidunt officia illo quasi inventore corporis non aut nobis eveniet quis mollitia dicta illum iste repellat, fugiat quam vero vel tempore molestiae? Cumque iste voluptas pariatur exercitationem eveniet quisquam dolor qui omnis odio corporis, tempora quam ex, soluta sapiente nam ad, ipsa laboriosam. Officiis maiores dignissimos saepe animi minima dolorem! Reiciendis sint numquam magni aliquid expedita hic amet.
     </p>
 
   return (
@@ -59,6 +58,9 @@ const IndexPage = () => {
               </div>
               <div className={styles.headerContainer}>
                 {title}
+              </div>
+              <div className={styles.dividerContainer}>
+                <hr/>
               </div>
               <div className={styles.contentContainer}>
                 {paragraph}
@@ -79,11 +81,13 @@ const IndexPage = () => {
                 className={styles.iconContainer}
                 whileHover={{ scale: 1.05 }}
               >
-                <FacebookIcon
-                  fillColor={colors.secondaryColor}
-                  width="100%"
-                  height="100%"
-                />
+                <a href="https://www.facebook.com/foreningenidealen/">
+                  <FacebookIcon
+                    fillColor={colors.secondaryColor}
+                    width="100%"
+                    height="100%"
+                  />
+                </a>
               </motion.div>
               <motion.div
                 className={styles.iconContainer}
@@ -96,7 +100,6 @@ const IndexPage = () => {
                   height="100%"
                 />
                 </a>
-                
               </motion.div>
             </div>
           </div>

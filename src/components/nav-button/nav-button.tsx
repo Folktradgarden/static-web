@@ -8,7 +8,6 @@ const NavButton = ({toggle, isOpen, vectorColor}) => {
     return(
         <motion.div 
             className={styles.root}
-            whileHover={{scale: 1.05}}
             initial={false}
             animate={
                 isOpen ? "open": "closed"

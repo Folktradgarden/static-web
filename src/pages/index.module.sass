@@ -11,25 +11,25 @@
     display: grid
     grid-template-columns: [col-left] 15% [col-first] auto [col-second] 15% [col-right]
     background: rgb(243,239,226)
-    background: linear-gradient(90deg, rgba(243,239,226,1) 0%, rgba(231,223,198,1) 100%)
+    background: linear-gradient(145deg, rgba(243,239,226,1) 0%, rgba(231,223,198,1) 31%)
     margin: 0
     padding: 0
     z-index: 0
 
 .rootContainer
     display: grid
-    grid-template-columns: [col-left] 60% [col-first] auto [col-right]
+    grid-template-columns: [col-left] 55% [col-first] auto [col-right]
     margin: 0
     padding: 0
-    background: linear-gradient(270deg, rgba(237,231,212,1) 50%, rgba(239,237,231,1) 100%)
-    box-shadow: $bs2
-
+    background: rgb(239,237,231)
+    background: linear-gradient(145deg, rgba(239,237,231,1) 0%, rgba(237,231,212,1) 31%)
+    box-shadow: $bs1
 // LEFT CONTAINER
 
 .leftContainer
-    margin-left: 4%
+    margin: 4%
     display: grid
-    grid-template-rows: [rows-top] auto [rows-second] min-content [rows-third] auto [rows-fourth]
+    grid-template-rows: [rows-top] auto [rows-second] min-content [rows-third] min-content [rows-fourth] auto [rows-bottom]
 
 .imageContainer
     display: flex
@@ -38,11 +38,10 @@
     padding: 0
 
 .image
-    border-radius: 10px
     width: 100%
 
 .headerContainer
-    margin: 0% 0% 2% 0%
+    margin: 0% 0% 1% 0%
     display: flex
     align-items: flex-end
     height: auto
@@ -51,7 +50,7 @@
     margin: 0
     padding: 0
     font-family: $fontMain
-    font-size: 2vw
+    font-size: 2.5em
     color: $secondary-color
     text-align: left
 
@@ -59,16 +58,24 @@
         color: $primary-accent-color
         text-decoration: none
 
+.dividerContainer
+    margin: 0% 0% 2% 0%
+
+    hr
+        margin: 0
+        border: 1px solid $secondary-color
+
 .contentContainer
     margin: 0
     padding: 0
+    
 
 .contentParagraph
     margin: 0% 0% 0% 0%
     padding: 0
     font-family: $fontMain
     text-align: left
-    font-size: 1.3vw
+    font-size: 1.8em
     color: $secondary-color
     font-weight: 600
 
@@ -90,6 +97,7 @@
     margin: 0% 5% 0% 5%
     padding: 0
     height: auto
+    width: 100%
 
 .promptContainer
     display: flex
@@ -99,7 +107,7 @@
 
 .promptParagraph
     font-family: $fontMain
-    font-size: 1.3vw
+    font-size: 2.5em
     color: $secondary-color
 
 // RIGHT PADDING

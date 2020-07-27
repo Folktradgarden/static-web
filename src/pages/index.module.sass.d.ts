@@ -16,3 +16,4 @@ export const topVp: string
 export const rightPadding: string
 export const iconRow: string
 export const iconContainer: string
+export const dividerContainer: string
