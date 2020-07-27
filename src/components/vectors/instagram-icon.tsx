@@ -2,11 +2,13 @@ import React from 'react'
 
 interface InstagramIconProps {
     fillColor?: string
+    width?: string
+    height?: string
 }
 
-const InstagramIcon: React.FC<InstagramIconProps> = ({fillColor}) => {
+const InstagramIcon: React.FC<InstagramIconProps> = ({fillColor, width, height}) => {
     return(
-        <svg width="auto" height="auto" viewBox="0 0 512 512">
+        <svg width={width ? width: "auto"} height={height ? height: "auto"} viewBox="0 0 512 512">
             <path
                 fill={fillColor ? fillColor : "#000000ff"}
                 d="m305 256c0 27.0625-21.9375 49-49 49s-49-21.9375-49-49 21.9375-49 49-49 49 21.9375 49 49zm0 0"

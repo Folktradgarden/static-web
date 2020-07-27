@@ -1,63 +1,57 @@
 @import ../global-styles/fonts
 @import ../global-styles/colors
 @import ../global-styles/effects
-    
+
 .root
-    display: flex
-    justify-content: center
-    height: 100vh
-    width: 100vw
+    display: grid
+    grid-template-rows: [row-top] 100vh [row-first]
+    z-index: 1
+
+.topVp
+    display: grid
+    grid-template-columns: [col-left] 15% [col-first] auto [col-second] 15% [col-right]
+    background: rgb(243,239,226)
+    background: linear-gradient(90deg, rgba(243,239,226,1) 0%, rgba(231,223,198,1) 100%)
     margin: 0
     padding: 0
+    z-index: 0
 
 .rootContainer
-    display: flex
-    margin: 0
-    padding: 0
-    height: 100%
-    width: 90%
-
-.leftRootContainer
-    width: 50%
     display: grid
-    grid-template-rows: [rows-top] auto [rows-second] min-content [rows-third] auto [rows-end]
-    grid-template-columns: [columns-left] auto [columns-second] auto [columns-end]
-
-.rightRootContainer
-    border-color: black
-    width: 50%
-    height: 100%
-    display: flex
-    justify-content: center
-    align-items: center
-
-.contentContainer
+    grid-template-columns: [col-left] 60% [col-first] auto [col-right]
     margin: 0
     padding: 0
+    background: linear-gradient(270deg, rgba(237,231,212,1) 50%, rgba(239,237,231,1) 100%)
+    box-shadow: $bs2
 
-.contentParagraph
-    margin: 0
+// LEFT CONTAINER
+
+.leftContainer
     margin-left: 4%
+    display: grid
+    grid-template-rows: [rows-top] auto [rows-second] min-content [rows-third] auto [rows-fourth]
+
+.imageContainer
+    display: flex
+    align-items: flex-end
+    margin: 0% 5% 3% 0%
     padding: 0
-    font-family: $fontMain
-    text-align: left
-    font-size: 2vw
-    color: $secondary-color
-    font-weight: 600
+
+.image
+    border-radius: 10px
+    width: 100%
 
 .headerContainer
-    margin: 0
-    padding: 0
+    margin: 0% 0% 2% 0%
     display: flex
     align-items: flex-end
     height: auto
 
 .header
     margin: 0
-    margin-bottom: 2%
     padding: 0
     font-family: $fontMain
-    font-size: 2.8vw
+    font-size: 2vw
     color: $secondary-color
     text-align: left
 
@@ -65,28 +59,68 @@
         color: $primary-accent-color
         text-decoration: none
 
+.contentContainer
+    margin: 0
+    padding: 0
+
+.contentParagraph
+    margin: 0% 0% 0% 0%
+    padding: 0
+    font-family: $fontMain
+    text-align: left
+    font-size: 1.3vw
+    color: $secondary-color
+    font-weight: 600
+
+// RIGHT CONTAINER
+
+.rightContainer
+    margin-right: 4%
+    display: grid
+    grid-template-rows: [rows-top] auto [row-first] auto
+
+.logoContainer
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    margin: 0
+    padding: 0
+
 .logo
-    width: 80%
+    margin: 0% 5% 0% 5%
+    padding: 0
     height: auto
-
-.image
-    border-radius: 20px
-    border: 7px solid $secondary-color
-
-.imageContainer
-    height: auto
-    width: 100%
 
 .promptContainer
     display: flex
-    margin: 0
+    justify-content: center
+    alin-items: flex-end
     padding: 0
-    grid-column-start: 1
-    grid-column-end: span columns-end
-    grid-row-start: 3
-    grid-row-end: span rows-end
 
 .promptParagraph
     font-family: $fontMain
-    font-size: 2vw
+    font-size: 1.3vw
     color: $secondary-color
+
+// RIGHT PADDING
+
+.rightPadding
+    margin: 0
+    padding: 0
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+
+.iconRow
+    display: flex
+    justify-content: flex-end
+    margin: 0% 20% 0% 0%
+    padding: 0
+    width: 100%
+    overflow: hidden
+
+.iconContainer
+    margin: 1%
+    padding: 0
+    max-width: 15%
+    cursor: pointer

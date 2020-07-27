@@ -15,14 +15,30 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const variants = {
-    open: { opacity: 1 },
-    closed: { opacity: 0 }
+    open: 
+    { 
+      width: '20vw',
+      borderWidth: '10px'
+    },
+    closed:
+    { 
+      width: '0vw',
+      borderWidth: '0px'
+    }
   }
 
   return (
     <>
       <NavButton isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} vectorColor={colors.backgroundColor}/>
-      <motion.header className={styles.header} initial={false} variants={variants} animate={isOpen ? "open" : "closed"}>
+      <motion.header 
+        className={styles.header}
+        transition={{
+          type: 'tween'
+        }}
+        initial={false}
+        variants={variants}
+        animate={isOpen ? "open" : "closed"}
+      >
       </motion.header>
     </>
 

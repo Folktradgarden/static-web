@@ -4,11 +4,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from "gatsby"
+import { FacebookIcon, InstagramIcon } from "../components/vectors"
+import { motion } from 'framer-motion'
 
 import Svart from '../assets/svart.svg'
 
 import * as styles from './index.module.sass'
-import SMIcons from "../components/sm-icons"
+import * as colors from '../global-styles/colors.scss'
 
 const IndexPage = () => {
 
@@ -26,37 +28,77 @@ const IndexPage = () => {
     }
   `)
 
+  const title =
+    <h1 className={styles.header}>
+      Vinnare av
+      <span>
+        <a href={headerHref}> Östgötapriset </a>
+      </span>
+        2020!
+    </h1>
+
+  const image =
+    <Img className={styles.image} fluid={data.placeholderImage.childImageSharp.fluid} />
+
+  const paragraph =
+    <p className={styles.contentParagraph}>
+      Folkträdgården är en ideell förening vars ändamål är att skapa
+      sammanhang som verkar för social och ekologisk hållbarhet.
+    </p>
+
   return (
     <Layout>
       <SEO title="Hem" />
-      <SMIcons/>
       <div className={styles.root}>
-        <div className={styles.rootContainer}>
-          <div className={styles.leftRootContainer}>
-            <div className={styles.headerContainer}>
-              <h1 className={styles.header}>
-                Vinnare av
-                <a href={headerHref}> Östgötapriset </a>
-                 2020!
-              </h1>
+        <div className={styles.topVp}>
+          <div></div>
+          <div className={styles.rootContainer}>
+            <div className={styles.leftContainer}>
+              <div className={styles.imageContainer}>
+                {image}
+              </div>
+              <div className={styles.headerContainer}>
+                {title}
+              </div>
+              <div className={styles.contentContainer}>
+                {paragraph}
+              </div>
             </div>
-            <div></div>
-            <div className={styles.imageContainer}>
-              <Img className={styles.image} fluid={data.placeholderImage.childImageSharp.fluid} />
-            </div>
-            <div className={styles.contentContainer}>
-              <p className={styles.contentParagraph}>
-                Folkträdgården är en ideell förening vars ändamål är att skapa
-                sammanhang som verkar för social och ekologisk hållbarhet.
-            </p>
-            </div>
-            <div className={styles.promptContainer}>
-              <h2 className={styles.promptParagraph}>Läs mer om vår berättelse!</h2>
-              <svg></svg>
+            <div className={styles.rightContainer}>
+              <div className={styles.logoContainer}>
+                <Svart className={styles.logo} />
+              </div>
+              <div className={styles.promptContainer}>
+                <h2 className={styles.promptParagraph}>Läs mer om vår berättelse!</h2>
+              </div>
             </div>
           </div>
-          <div className={styles.rightRootContainer}>
-            <Svart className={styles.logo} />
+          <div className={styles.rightPadding}>
+            <div className={styles.iconRow}>
+              <motion.div
+                className={styles.iconContainer}
+                whileHover={{ scale: 1.05 }}
+              >
+                <FacebookIcon
+                  fillColor={colors.secondaryColor}
+                  width="100%"
+                  height="100%"
+                />
+              </motion.div>
+              <motion.div
+                className={styles.iconContainer}
+                whileHover={{ scale: 1.05 }}
+              >
+                <a href="https://www.instagram.com/folktradgarden/">
+                <InstagramIcon
+                  fillColor={colors.secondaryColor}
+                  width="100%"
+                  height="100%"
+                />
+                </a>
+                
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
