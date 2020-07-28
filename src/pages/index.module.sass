@@ -84,7 +84,7 @@
 .rightContainer
     margin-right: 4%
     display: grid
-    grid-template-rows: [rows-top] auto [row-first] auto
+    grid-template-rows: [rows-top] auto [row-first] min-content [row-second] auto [row-bottom]
 
 .logoContainer
     display: flex
@@ -109,6 +109,19 @@
     font-family: $fontMain
     font-size: 2.5em
     color: $secondary-color
+
+.bookVectorContainer
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    margin: 0
+    padding: 0
+
+.bookVector
+    margin-left: 30%
+    margin-right: 30%
+    height: auto
+    width: 100%
 
 // RIGHT PADDING
 

@@ -17,3 +17,5 @@ export const rightPadding: string
 export const iconRow: string
 export const iconContainer: string
 export const dividerContainer: string
+export const bookVectorContainer: string
+export const bookVector: string

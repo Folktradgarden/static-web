@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from "gatsby"
-import { FacebookIcon, InstagramIcon } from "../components/vectors"
+import { FacebookIcon, InstagramIcon, BookVector } from "../components/vectors"
 import { motion } from 'framer-motion'
 
 import Svart from '../assets/svart.svg'
@@ -72,6 +72,13 @@ const IndexPage = () => {
               </div>
               <div className={styles.promptContainer}>
                 <h2 className={styles.promptParagraph}>Läs mer om vår berättelse!</h2>
+              </div>
+              <div className={styles.bookVectorContainer}>
+                <BookVector
+                  className={styles.bookVector}
+                  width="100%"
+                  height="100%"
+                />
               </div>
             </div>
           </div>
