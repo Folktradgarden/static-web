@@ -1,0 +1,12 @@
+@import "./colors";
+@import "./fonts";
+@import "./effects.scss";
+
+:export {
+  colors: {
+    secondaryColor: $secondary-color;
+    backgroundColor: $background-color;
+    facebookBlue: $facebook-blue;
+    instagramPink: $instagram-pink;
+  }
+}

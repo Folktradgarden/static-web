@@ -3,145 +3,144 @@
 @import ../global-styles/effects
 
 .root
-    display: grid
-    grid-template-rows: [row-top] 100vh [row-first]
-    z-index: 1
+  display: grid
+  grid-template-rows: [row-top] 100vh [row-first]
+  z-index: 1
 
 .topVp
-    display: grid
-    grid-template-columns: [col-left] 15% [col-first] auto [col-second] 15% [col-right]
-    background: rgb(243,239,226)
-    background: linear-gradient(145deg, rgba(243,239,226,1) 0%, rgba(231,223,198,1) 31%)
-    margin: 0
-    padding: 0
-    z-index: 0
+  display: grid
+  grid-template-columns: [col-left] 15% [col-first] auto [col-second] 15% [col-right]
+  background: rgb(243,239,226)
+  background: linear-gradient(145deg, rgba(243,239,226,1) 0%, rgba(231,223,198,1) 31%)
+  margin: 0
+  padding: 0
+  z-index: 0
 
 .rootContainer
-    display: grid
-    grid-template-columns: [col-left] 55% [col-first] auto [col-right]
-    margin: 0
-    padding: 0
-    background: rgb(239,237,231)
-    background: linear-gradient(145deg, rgba(239,237,231,1) 0%, rgba(237,231,212,1) 31%)
-    box-shadow: $bs1
+  display: grid
+  grid-template-columns: [col-left] 55% [col-first] auto [col-right]
+  margin: 0
+  padding: 0
+  background: rgb(239,237,231)
+  background: linear-gradient(145deg, rgba(239,237,231,1) 0%, rgba(237,231,212,1) 31%)
+  box-shadow: $bs2
 // LEFT CONTAINER
 
 .leftContainer
-    margin: 4%
-    display: grid
-    grid-template-rows: [rows-top] auto [rows-second] min-content [rows-third] min-content [rows-fourth] auto [rows-bottom]
+  margin: 4%
+  display: grid
+  grid-template-rows: [rows-top] auto [rows-second] min-content [rows-third] min-content [rows-fourth] auto [rows-bottom]
 
 .imageContainer
-    display: flex
-    align-items: flex-end
-    margin: 0% 5% 3% 0%
-    padding: 0
+  display: flex
+  align-items: flex-end
+  margin: 0% 5% 3% 0%
+  padding: 0
 
 .image
-    width: 100%
+  width: 100%
 
 .headerContainer
-    margin: 0% 0% 1% 0%
-    display: flex
-    align-items: flex-end
-    height: auto
+  margin: 0% 0% 1% 0%
+  display: flex
+  align-items: flex-end
+  height: auto
 
 .header
-    margin: 0
-    padding: 0
-    font-family: $fontMain
-    font-size: 2.5em
-    color: $secondary-color
-    text-align: left
+  margin: 0
+  padding: 0
+  font-family: $fontMain
+  font-size: 2.5em
+  color: $secondary-color
+  text-align: left
 
-    a
-        color: $primary-accent-color
-        text-decoration: none
+  a
+    color: $primary-accent-color
+    text-decoration: none
 
 .dividerContainer
-    margin: 0% 0% 2% 0%
+  margin: 0% 0% 2% 0%
 
-    hr
-        margin: 0
-        border: 1px solid $secondary-color
+  hr
+    margin: 0
+    border: 1px solid $secondary-color
 
 .contentContainer
-    margin: 0
-    padding: 0
-    
+  margin: 0
+  padding: 0
 
 .contentParagraph
-    margin: 0% 0% 0% 0%
-    padding: 0
-    font-family: $fontMain
-    text-align: left
-    font-size: 1.8em
-    color: $secondary-color
-    font-weight: 600
+  margin: 0% 0% 0% 0%
+  padding: 0
+  font-family: $fontMain
+  text-align: left
+  font-size: 1.8em
+  color: $secondary-color
+  font-weight: 600
 
 // RIGHT CONTAINER
 
 .rightContainer
-    margin-right: 4%
-    display: grid
-    grid-template-rows: [rows-top] auto [row-first] min-content [row-second] auto [row-bottom]
+  margin-right: 4%
+  display: grid
+  grid-template-rows: [rows-top] auto [row-first] min-content [row-second] auto [row-bottom]
 
 .logoContainer
-    display: flex
-    justify-content: center
-    align-items: flex-end
-    margin: 0
-    padding: 0
+  display: flex
+  justify-content: center
+  align-items: flex-end
+  margin: 0
+  padding: 0
 
 .logo
-    margin: 0% 5% 0% 5%
-    padding: 0
-    height: auto
-    width: 100%
+  margin: 0% 5% 0% 5%
+  padding: 0
+  height: auto
+  width: 100%
 
 .promptContainer
-    display: flex
-    justify-content: center
-    alin-items: flex-end
-    padding: 0
+  display: flex
+  justify-content: center
+  alin-items: flex-end
+  padding: 0
 
 .promptParagraph
-    font-family: $fontMain
-    font-size: 2.5em
-    color: $secondary-color
+  font-family: $fontMain
+  font-size: 2.5eme
+  color: $secondary-color
 
 .bookVectorContainer
-    display: flex
-    justify-content: center
-    align-items: flex-start
-    margin: 0
-    padding: 0
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  margin: 0
+  padding: 0
 
 .bookVector
-    margin-left: 30%
-    margin-right: 30%
-    height: auto
-    width: 100%
+  margin-left: 30%
+  margin-right: 30%
+  height: auto
+  width: 100%
 
 // RIGHT PADDING
 
 .rightPadding
-    margin: 0
-    padding: 0
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
+  margin: 0
+  padding: 0
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
 
 .iconRow
-    display: flex
-    justify-content: flex-end
-    margin: 0% 20% 0% 0%
-    padding: 0
-    width: 100%
-    overflow: hidden
+  display: flex
+  justify-content: flex-end
+  margin: 0% 20% 0% 0%
+  padding: 0
+  width: 100%
+  overflow: hidden
 
 .iconContainer
-    margin: 1%
-    padding: 0
-    max-width: 15%
-    cursor: pointer
+  margin: 1%
+  padding: 0
+  max-width: 15%
+  cursor: pointer
