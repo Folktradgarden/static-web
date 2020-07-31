@@ -1,9 +1,11 @@
 import React from "react"
 
-const StoryPage:React.FC = () => {
-  return (
-    <h1>Test</h1>
-  )
-}
+import Layout from "../../components/layout"
+
+const StoryPage: React.FC = () => (
+  <Layout>
+    <h1>Test!</h1>
+  </Layout>
+)
 
 export default StoryPage

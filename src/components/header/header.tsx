@@ -41,9 +41,7 @@ const Header: React.FC<HeaderProps> = ({ siteTitle }) => {
         animate={isOpen ? "open" : "closed"}
       >
         <div className={styles.linkContainer}>
-          <MenuItem title={"Vår berättelse"} to={"/storypage"} />
-          <MenuItem title={"Vår berättelse"} to={"/storypage"} />
-          <MenuItem title={"Vår berättelse"} to={"/storypage"} />
+          <MenuItem title={"Hem"} to={"/"} />
           <MenuItem title={"Vår berättelse"} to={"/storypage"} />
         </div>
       </motion.header>

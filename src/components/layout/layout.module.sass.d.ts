@@ -1,0 +1,9 @@
+export const html:string
+export const body:string
+export const main:string
+export const root:string
+export const topVp:string
+export const rootContainer:string
+export const rightPadding:string
+export const iconRow:string
+export const iconContainer:string

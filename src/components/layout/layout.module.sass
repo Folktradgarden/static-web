@@ -1,0 +1,59 @@
+@import ../../global-styles/main
+
+html
+  font-family: sans-serif
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+
+body
+  margin: 0
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+main
+  margin: 0
+  padding: 0
+
+.root
+  display: grid
+  grid-template-rows: [row-top] 100vh [row-first]
+  z-index: 1
+
+.topVp
+  display: grid
+  grid-template-columns: [col-left] 15% [col-first] auto [col-second] 15% [col-right]
+  background: rgb(243,239,226)
+  background: linear-gradient(145deg, rgba(243,239,226,1) 0%, rgba(231,223,198,1) 31%)
+  margin: 0
+  padding: 0
+  z-index: 0
+
+.rootContainer
+  display: grid
+  grid-template-columns: [col-left] 55% [col-first] auto [col-right]
+  margin: 0
+  padding: 0
+  background: rgb(239,237,231)
+  background: linear-gradient(145deg, rgba(239,237,231,1) 0%, rgba(237,231,212,1) 31%)
+  box-shadow: $bs2
+
+.rightPadding
+  margin: 0
+  padding: 0
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+
+.iconRow
+  display: flex
+  justify-content: flex-end
+  margin: 0% 20% 0% 0%
+  padding: 0
+  width: 100%
+  overflow: hidden
+
+.iconContainer
+  margin: 1%
+  padding: 0
+  max-width: 15%
+  cursor: pointer
