@@ -7,12 +7,16 @@ declare module "styled-components" {
       primaryDark: string
       onPrimary: string
       secondary: string
+      secondaryDark: string
       onSecondary: string
       accent: string
       surface: string
       onSurface: string
       background: string
       onBackground: string
+    }
+    border: {
+      radius: string
     }
   }
 }

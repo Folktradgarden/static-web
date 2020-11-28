@@ -1,12 +1,14 @@
 import React, { FC, useState } from "react"
-import ToggleButton from "./ToggleButton"
+import Drawer from "../presentational/Drawer"
+import LeafButton from "../presentational/LeafButton"
 
 const Navigation: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
     <>
-      <ToggleButton isActive={isOpen} toggle={() => setIsOpen(!isOpen)} />
+      <Drawer isOpen={isOpen} toggle={() => setIsOpen(!isOpen)} />
+      <LeafButton isActive={isOpen} toggle={() => setIsOpen(!isOpen)} />
     </>
   )
 }

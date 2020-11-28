@@ -1,14 +1,14 @@
 import { Variants } from "framer-motion"
 import React, { FC } from "react"
-import LeafIcon from "../../presentational/LeafIcon"
-import { ToggleButtonRoot } from "./styled"
+import LeafIcon from "../LeafIcon"
+import { LeafButtonRoot } from "./styled"
 
-type ToggleButtonProps = {
+type LeafButtonProps = {
   isActive: boolean
   toggle: () => void
 }
 
-const ToggleButton: FC<ToggleButtonProps> = ({ isActive, toggle }) => {
+const LeafButton: FC<LeafButtonProps> = ({ isActive, toggle }) => {
   const variants: Variants = {
     active: {
       transform: "scale(-1, 1) rotate(225deg)",
@@ -19,21 +19,21 @@ const ToggleButton: FC<ToggleButtonProps> = ({ isActive, toggle }) => {
   }
 
   return (
-    <ToggleButtonRoot
+    <LeafButtonRoot
       initial={false}
       variants={variants}
       transition={{
         type: "spring",
         stiffness: 100,
         bounce: 0.5,
-        duration: 1,
+        duration: 0.5,
       }}
       animate={isActive ? "active" : "inActive"}
       onClick={() => toggle()}
     >
-      <LeafIcon />
-    </ToggleButtonRoot>
+      <LeafIcon animate />
+    </LeafButtonRoot>
   )
 }
 
-export default ToggleButton
+export default LeafButton

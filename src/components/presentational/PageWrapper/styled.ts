@@ -12,6 +12,6 @@ export const PageWrapperRoot = styled.div<RootProps>`
   justify-content: ${({ justify }) => justify && "center"};
   align-items: ${({ align }) => align && "center"};
   box-sizing: border-box;
-  padding: 5rem 1rem 1rem 1rem;
+  padding: 4rem 1rem 1rem 1rem;
   height: 100%;
 `
