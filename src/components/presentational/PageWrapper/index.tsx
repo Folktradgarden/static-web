@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from "react"
 import { PageWrapperRoot } from "./styled"
+import Footer from "components/Footer";
 
 type PageWrapperProps = {
   children?: ReactNode
@@ -15,9 +16,12 @@ const PageWrapper: FC<PageWrapperProps> = ({
   row = false,
 }) => {
   return (
-    <PageWrapperRoot justify={justify} align={align} row={row}>
-      {children}
-    </PageWrapperRoot>
+    <>
+      <PageWrapperRoot justify={justify} align={align} row={row}>
+        {children}
+      </PageWrapperRoot>
+      <Footer></Footer>
+    </>
   )
 }
 
