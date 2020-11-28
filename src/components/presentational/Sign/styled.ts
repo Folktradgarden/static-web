@@ -3,8 +3,8 @@ import styled from "styled-components"
 export const SignRoot = styled.div`
   position: relative;
   height: 100%;
-  width: 100%;
-  padding: 3rem 1rem 0 1rem;
+  width: 90%;
+  padding: 3rem 0;
   box-sizing: border-box;
 `
 
@@ -43,5 +43,4 @@ export const Header = styled.h2<HeaderProps>`
 
 export const Paragraph = styled.p`
   color: ${({ theme }) => theme.colors.onSurface};
-  margin-right: 2rem;
 `
