@@ -15,7 +15,8 @@ export const SignSurface = styled.div`
   background-color: ${({ theme }) => theme.colors.surface};
   transform: skew(1deg, -1deg);
   padding: 1rem;
-  border: solid 2px ${({ theme }) => theme.colors.secondary};
+  border: solid
+    ${({ theme }) => `${theme.border.width} ${theme.colors.secondary}`};
 `
 
 export const SignFoot = styled.div`

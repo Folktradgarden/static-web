@@ -17,6 +17,7 @@ declare module "styled-components" {
     }
     border: {
       radius: string
+      width: string
     }
   }
 }
