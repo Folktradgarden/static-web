@@ -12,7 +12,7 @@ export const LeafPath = styled.path<LeafPathProps>`
   fill: ${({ theme }) => theme.colors.primary};
 
   animation: ${({ animate }) =>
-    animate ? "color-fill-frames 30s linear infinite" : "none"};
+    animate ? "color-fill-frames 30s linear" : "none"};
 `
 
 export const FilledPath = styled.path`
@@ -21,4 +21,5 @@ export const FilledPath = styled.path`
 
 export const StrokedPath = styled.path`
   stroke: ${({ theme }) => theme.colors.secondary};
+  fill: ${({ theme }) => theme.colors.surface};
 `

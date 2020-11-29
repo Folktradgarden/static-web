@@ -1,6 +1,15 @@
 import { Variants } from "framer-motion"
 import React, { FC, ReactNode } from "react"
-import { Container, DrawerBackground, LinkContainer } from "./styled"
+import { facebookUrl, instagramUrl } from "../../../constants"
+import FacebookIcon from "../Icons/FacebookIcon"
+import InstagramIcon from "../Icons/InstagramIcon"
+import {
+  Anchor,
+  Container,
+  DrawerBackground,
+  IconContainer,
+  LinkContainer,
+} from "./styled"
 
 type DrawerProps = {
   children?: ReactNode
@@ -55,6 +64,14 @@ const Drawer: FC<DrawerProps> = ({ isOpen, toggle, children }) => {
         }}
       >
         <LinkContainer>{children}</LinkContainer>
+        <IconContainer>
+          <Anchor href={facebookUrl}>
+            <FacebookIcon />
+          </Anchor>
+          <Anchor href={instagramUrl}>
+            <InstagramIcon />
+          </Anchor>
+        </IconContainer>
       </Container>
     </>
   )

@@ -8,5 +8,5 @@ export const IconPath = styled.path<IconPathProps>`
   fill: ${({ theme }) => theme.colors.primary};
 
   animation: ${({ animate }) =>
-    animate ? "color-fill-frames 30s linear infinite" : "none"};
+    animate ? "color-fill-frames 30s linear" : "none"};
 `

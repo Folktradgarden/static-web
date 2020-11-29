@@ -25,3 +25,18 @@ export const LinkContainer = styled.div`
   width: 100%;
   margin-top: 4rem;
 `
+
+export const IconContainer = styled.div`
+  position: absolute;
+  padding: 0 0 16px 16px;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  bottom: 0;
+  height: 48px;
+  width: 106px;
+`
+
+export const Anchor = styled.a`
+  cursor: pointer;
+`

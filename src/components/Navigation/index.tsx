@@ -18,7 +18,7 @@ const Navigation: FC = () => {
         <NavigationLink to="/kontakt" icon={<PaperPlaneIcon />}>
           Kontakt
         </NavigationLink>
-        <NavigationLink to="/hitta" icon={<BinocularsIcon />}>
+        <NavigationLink to="/hitta-oss" icon={<BinocularsIcon />}>
           Hitta oss
         </NavigationLink>
       </Drawer>

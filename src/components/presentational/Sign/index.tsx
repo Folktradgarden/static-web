@@ -1,17 +1,34 @@
-import React, { FC } from "react"
-import { Header, Paragraph, SignFoot, SignRoot, SignSurface } from "./styled"
+import React, { FC, ReactNode } from "react"
+import {
+  Divider,
+  Header,
+  Hint,
+  Paragraph,
+  SignFoot,
+  SignRoot,
+  SignSurface,
+} from "./styled"
 
-const Sign: FC = () => {
+type SignProps = {
+  title?: string
+  hint?: string
+  animateTitle?: boolean
+  children: ReactNode
+}
+
+const Sign: FC<SignProps> = ({
+  title = "A title",
+  hint,
+  animateTitle = false,
+  children,
+}) => {
   return (
     <SignRoot>
       <SignSurface>
-        <Header animate>En ideell förening.</Header>
-        <Paragraph>
-          Begagnade spadar och verktyg. Återvunnet byggmaterial. Att arbeta hårt
-          tillsammans, i en inkluderande social gemenskap. Olle Elfvin och Jakob
-          Hedvall drömmer om att göra Folkträdgården till både livsstil och
-          inkomstkälla!
-        </Paragraph>
+        <Header animate={animateTitle}>{title}</Header>
+        <Paragraph>{children}</Paragraph>
+        <Divider />
+        <Hint animate>{hint}</Hint>
       </SignSurface>
       <SignFoot />
     </SignRoot>
