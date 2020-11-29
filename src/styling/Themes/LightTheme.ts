@@ -16,6 +16,7 @@ const LightTheme: DefaultTheme = {
   },
   border: {
     radius: "4px",
+    width: "2px",
   },
 }
 

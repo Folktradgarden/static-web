@@ -1,13 +1,14 @@
 import { Variants } from "framer-motion"
-import React, { FC } from "react"
-import { Container, DrawerBackground } from "./styled"
+import React, { FC, ReactNode } from "react"
+import { Container, DrawerBackground, LinkContainer } from "./styled"
 
 type DrawerProps = {
+  children?: ReactNode
   isOpen: boolean
   toggle: () => void
 }
 
-const Drawer: FC<DrawerProps> = ({ isOpen, toggle }) => {
+const Drawer: FC<DrawerProps> = ({ isOpen, toggle, children }) => {
   const backgroundVariants: Variants = {
     open: {
       backgroundColor: "rgba(0, 0, 0, 0.3)",
@@ -36,7 +37,7 @@ const Drawer: FC<DrawerProps> = ({ isOpen, toggle }) => {
   return (
     <>
       <DrawerBackground
-        initial={false}
+        initial={true}
         animate={isOpen ? "open" : "closed"}
         variants={backgroundVariants}
         transition={{
@@ -52,7 +53,9 @@ const Drawer: FC<DrawerProps> = ({ isOpen, toggle }) => {
           type: "spring",
           duration: 1,
         }}
-      />
+      >
+        <LinkContainer>{children}</LinkContainer>
+      </Container>
     </>
   )
 }

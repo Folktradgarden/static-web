@@ -7,7 +7,7 @@ const Kontakt: FC<PageProps> = () => {
   return (
     <Layout>
       <PageWrapper>
-        <h1>Contact</h1>
+        <h1>Kontakt</h1>
       </PageWrapper>
     </Layout>
   )

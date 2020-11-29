@@ -5,12 +5,12 @@ const Sign: FC = () => {
   return (
     <SignRoot>
       <SignSurface>
-        <Header animate>En ideell föreningen.</Header>
+        <Header animate>En ideell förening.</Header>
         <Paragraph>
           Begagnade spadar och verktyg. Återvunnet byggmaterial. Att arbeta hårt
           tillsammans, i en inkluderande social gemenskap. Olle Elfvin och Jakob
           Hedvall drömmer om att göra Folkträdgården till både livsstil och
-          inkomstkälla.
+          inkomstkälla!
         </Paragraph>
       </SignSurface>
       <SignFoot />

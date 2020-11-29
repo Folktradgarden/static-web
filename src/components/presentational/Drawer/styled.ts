@@ -18,4 +18,10 @@ export const Container = styled(motion.div)`
   width: 256px;
   height: 100%;
   background-color: ${({ theme }) => theme.colors.surface};
+  overflow: hidden;
+`
+
+export const LinkContainer = styled.div`
+  width: 100%;
+  margin-top: 4rem;
 `
