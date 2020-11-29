@@ -13,6 +13,8 @@ const LightTheme: DefaultTheme = {
     onSurface: "#5F321C",
     background: "#E7DFC6",
     onBackground: "#5F321C",
+    facebook: "#05668D",
+    instagram: "#FF5A5F",
   },
   border: {
     radius: "4px",
