@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import FTLogo from "../components/presentational/FTLogo"
 import LeafIcon from "../components/presentational/LeafIcon"
 import PageWrapper from "../components/presentational/PageWrapper"
-import Sign from "../components/presentational/Sign"
+import Sign from "../components/Sign"
 import {
   Hint,
   IconContainer,
@@ -40,7 +40,7 @@ const Home: FC<PageProps> = () => {
           <FTLogo animate />
         </LogoContainer>
         <SignContainer>
-          <Sign hint={renderHint()} videoUrl={videoUrl}>
+          <Sign divider hint={renderHint()}>
             {titleContent}
           </Sign>
         </SignContainer>

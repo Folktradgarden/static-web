@@ -9,11 +9,6 @@ export const LogoContainer = styled.div`
   padding: 0 1rem 0 1rem;
   margin-top: 2.5rem;
   box-sizing: border-box;
-
-  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    width: 50%;
-    height: 50%;
-  }
 `
 
 export const SignContainer = styled.div`
@@ -23,10 +18,6 @@ export const SignContainer = styled.div`
   width: 100%;
   padding: 0 1rem 0 1rem;
   box-sizing: border-box;
-
-  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    height: 60%;
-  }
 `
 
 type HeaderProps = {
@@ -54,10 +45,9 @@ export const Hint = styled.p<HintProps>`
   animation: ${({ animate }) =>
     animate ? "color-text-frames 30s linear" : "none"};
   text-transform: uppercase;
-  margin-top: 1rem;
 
-  @media only screen and (min-width: ${globalWidthBreakpoints.md}) {
-    font-size: 2rem;
+  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
+    font-size: 2.2rem;
   }
 `
 
@@ -65,7 +55,7 @@ export const IconContainer = styled.div`
   display: inline-block;
   width: 1.2rem;
 
-  @media only screen and (min-width: ${globalWidthBreakpoints.md}) {
-    width: 1.8rem;
+  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
+    width: 2rem;
   }
 `

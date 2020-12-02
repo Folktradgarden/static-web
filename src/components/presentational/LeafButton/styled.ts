@@ -16,7 +16,7 @@ export const LeafButtonRoot = styled(motion.div)`
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
-  @media only screen and (min-width: ${globalWidthBreakpoints.md}) {
+  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
     width: 4rem;
     height: 4rem;
   }

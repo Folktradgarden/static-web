@@ -1,6 +1,13 @@
 import React, { FC, ReactNode } from "react"
 import ReactPlayer from "react-player"
-import { Divider, Paragraph, SignFoot, SignRoot, SignSurface } from "./styled"
+import {
+  Divider,
+  Paragraph,
+  ParagraphContainer,
+  SignFoot,
+  SignRoot,
+  SignSurface,
+} from "./styled"
 
 type SignProps = {
   videoUrl?: string
@@ -21,7 +28,11 @@ const Sign: FC<SignProps> = ({
     <SignRoot>
       <SignSurface>
         {title}
-        {!videoUrl && children && <Paragraph>{children}</Paragraph>}
+        {!videoUrl && children && (
+          <ParagraphContainer>
+            <Paragraph>{children}</Paragraph>
+          </ParagraphContainer>
+        )}
         {videoUrl && (
           <ReactPlayer
             style={{ flex: "1" }}
