@@ -6,11 +6,10 @@ export const AddressContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 1.2rem 0;
+  margin-bottom: 1rem;
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors.surface};
   color: ${({ theme }) => theme.colors.onSurface};
-  border-top: ${({ theme }) =>
-    `solid ${theme.border.width} ${theme.colors.secondary}`};
 `
 
 export const Street = styled.h3`

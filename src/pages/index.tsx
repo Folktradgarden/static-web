@@ -8,12 +8,11 @@ import Sign from "../components/presentational/Sign"
 const Home: FC<PageProps> = () => {
   return (
     <Layout>
-      <PageWrapper align>
+      <PageWrapper align padding="3rem 1rem 1rem 1rem">
         <FTLogo animate />
         <Sign
           title="En ideell förening."
           hint="Klicka på lövet om du vill veta mer!"
-          animateTitle
         >
           Begagnade spadar och verktyg. Återvunnet byggmaterial. Att arbeta hårt
           tillsammans, i en inkluderande social gemenskap. Olle Elfvin och Jakob

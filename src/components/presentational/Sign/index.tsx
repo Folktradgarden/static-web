@@ -12,14 +12,14 @@ import {
 type SignProps = {
   title?: string
   hint?: string
-  animateTitle?: boolean
+  animate?: boolean
   children: ReactNode
 }
 
 const Sign: FC<SignProps> = ({
   title = "A title",
   hint,
-  animateTitle = false,
+  animate: animateTitle = false,
   children,
 }) => {
   return (
@@ -28,7 +28,7 @@ const Sign: FC<SignProps> = ({
         <Header animate={animateTitle}>{title}</Header>
         <Paragraph>{children}</Paragraph>
         <Divider />
-        <Hint animate>{hint}</Hint>
+        <Hint animate={animateTitle}>{hint}</Hint>
       </SignSurface>
       <SignFoot />
     </SignRoot>

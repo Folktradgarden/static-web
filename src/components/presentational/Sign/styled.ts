@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const SignRoot = styled.div`
   position: relative;
   height: 100%;
-  width: 90%;
+  width: 95%;
   padding: 3rem 0;
   box-sizing: border-box;
 `
