@@ -35,7 +35,7 @@ const Home: FC<PageProps> = () => {
 
   return (
     <Layout>
-      <PageWrapper padding="3rem 1rem 1rem 1rem">
+      <PageWrapper>
         <LogoContainer>
           <FTLogo animate />
         </LogoContainer>

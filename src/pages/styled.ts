@@ -6,6 +6,9 @@ export const LogoContainer = styled.div`
   justify-content: center;
   height: 35%;
   width: 100%;
+  padding: 0 1rem 0 1rem;
+  margin-top: 2.5rem;
+  box-sizing: border-box;
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
     width: 50%;
@@ -18,6 +21,8 @@ export const SignContainer = styled.div`
   justify-content: center;
   flex: 1;
   width: 100%;
+  padding: 0 1rem 0 1rem;
+  box-sizing: border-box;
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
     height: 60%;
@@ -59,4 +64,8 @@ export const Hint = styled.p<HintProps>`
 export const IconContainer = styled.div`
   display: inline-block;
   width: 1.2rem;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.md}) {
+    width: 1.8rem;
+  }
 `

@@ -8,6 +8,8 @@ export const AddressContainer = styled.div`
   padding: 1.2rem 0;
   margin-bottom: 1rem;
   box-sizing: border-box;
+  margin-top: 3.5rem;
+  width: 100%;
   background-color: ${({ theme }) => theme.colors.surface};
   color: ${({ theme }) => theme.colors.onSurface};
 `

@@ -8,7 +8,7 @@ import { AddressContainer, MapContainer, Street, ZipCity } from "./styled"
 const HittaOss: FC<PageProps> = () => {
   return (
     <Layout>
-      <PageWrapper padding="3.4rem 0 0 0">
+      <PageWrapper>
         <AddressContainer>
           <Street>Kunskapslänken</Street>
           <ZipCity>585 98 Linköping</ZipCity>

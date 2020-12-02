@@ -11,7 +11,6 @@ export const PageWrapperRoot = styled.div<RootProps>`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding: ${({ padding }) => padding || "100px 1rem 1rem 1rem"};
   height: 100%;
   min-height: 800px;
 
