@@ -15,11 +15,11 @@ const Navigation: FC = () => {
         <NavigationLink to="/" icon={<HouseIcon />}>
           Hem
         </NavigationLink>
-        <NavigationLink to="/kontakt" icon={<PaperPlaneIcon />}>
-          Kontakt
-        </NavigationLink>
         <NavigationLink to="/hitta-oss" icon={<BinocularsIcon />}>
           Hitta oss
+        </NavigationLink>
+        <NavigationLink to="/kontakt" icon={<PaperPlaneIcon />}>
+          Kontakt
         </NavigationLink>
       </Drawer>
       <LeafButton isActive={isOpen} toggle={() => setIsOpen(!isOpen)} />

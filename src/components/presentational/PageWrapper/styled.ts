@@ -4,6 +4,7 @@ type RootProps = {
   justify: boolean
   align: boolean
   row: boolean
+  padding: string
 }
 
 export const PageWrapperRoot = styled.div<RootProps>`
@@ -12,6 +13,6 @@ export const PageWrapperRoot = styled.div<RootProps>`
   justify-content: ${({ justify }) => justify && "center"};
   align-items: ${({ align }) => align && "center"};
   box-sizing: border-box;
-  padding: 4rem 1rem 1rem 1rem;
+  padding: ${({ padding }) => padding || "100px 1rem 1rem 1rem"};
   height: 100%;
 `

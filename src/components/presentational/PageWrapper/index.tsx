@@ -6,6 +6,7 @@ type PageWrapperProps = {
   justify?: boolean
   align?: boolean
   row?: boolean
+  padding?: string
 }
 
 const PageWrapper: FC<PageWrapperProps> = ({
@@ -13,9 +14,15 @@ const PageWrapper: FC<PageWrapperProps> = ({
   justify = false,
   align = false,
   row = false,
+  padding = "",
 }) => {
   return (
-    <PageWrapperRoot justify={justify} align={align} row={row}>
+    <PageWrapperRoot
+      justify={justify}
+      align={align}
+      row={row}
+      padding={padding}
+    >
       {children}
     </PageWrapperRoot>
   )
