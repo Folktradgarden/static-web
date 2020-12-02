@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import styled from "styled-components"
+import { globalWidthBreakpoints } from "../../../styling/GlobalStyle"
 
 export const DrawerBackground = styled(motion.div)`
   position: absolute;

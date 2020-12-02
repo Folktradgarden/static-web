@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import styled from "styled-components"
+import { globalWidthBreakpoints } from "../../../styling/GlobalStyle"
 
 export const LeafButtonRoot = styled(motion.div)`
   position: absolute;
@@ -14,4 +15,9 @@ export const LeafButtonRoot = styled(motion.div)`
   transform: scale(-1, 1) rotate(45deg);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.md}) {
+    width: 4rem;
+    height: 4rem;
+  }
 `

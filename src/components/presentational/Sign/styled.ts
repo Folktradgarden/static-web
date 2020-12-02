@@ -1,22 +1,33 @@
 import styled from "styled-components"
+import { globalWidthBreakpoints } from "../../../styling/GlobalStyle"
 
 export const SignRoot = styled.div`
   position: relative;
   height: 100%;
   width: 95%;
-  padding: 3rem 0;
   box-sizing: border-box;
 `
 
 export const SignSurface = styled.div`
+  display: flex;
+  flex-direction: column;
   position: absolute;
   z-index: 1;
   top: 10%;
+  right: 0;
+  left: 0;
+  height: 60%;
+  box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors.surface};
-  transform: skew(1deg, -1deg);
   padding: 1rem;
   border: solid
     ${({ theme }) => `${theme.border.width} ${theme.colors.secondary}`};
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    top: 15%;
+    left: 0%;
+    right: 0%;
+  }
 `
 
 export const SignFoot = styled.div`
@@ -25,22 +36,14 @@ export const SignFoot = styled.div`
   top: 5%;
   bottom: 5%;
   left: 50%;
-  transform: translateX(-50%) skew(-1deg, 1deg);
+  transform: translateX(-50%) skew(-2deg, 2deg);
   width: 15%;
   background-color: ${({ theme }) => theme.colors.secondaryDark};
-`
-type HeaderProps = {
-  animate: boolean
-}
 
-export const Header = styled.h2<HeaderProps>`
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-  color: ${({ theme }) => theme.colors.primary};
-  text-transform: uppercase;
-
-  animation: ${({ animate }) =>
-    animate ? "color-text-frames 30s linear" : "none"};
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    top: 10%;
+    bottom: 5%;
+  }
 `
 
 export const Paragraph = styled.p`
@@ -51,17 +54,7 @@ export const Paragraph = styled.p`
 export const Divider = styled.div`
   width: 100%;
   height: 0;
-  border-top: solid 1px ${({ theme }) => theme.colors.secondary};
+  border-top: solid
+    ${({ theme }) => `${theme.border.width} ${theme.colors.secondary}`};
   margin: 0.5rem 0 0.7rem 0;
-`
-type HintProps = {
-  animate: boolean
-}
-
-export const Hint = styled.h4<HintProps>`
-  color: ${({ theme }) => theme.colors.primary};
-  text-transform: uppercase;
-  animation: ${({ animate }) =>
-    animate ? "color-text-frames 30s linear" : "none"};
-  padding: 0 30% 0 0;
 `

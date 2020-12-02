@@ -1,34 +1,37 @@
 import React, { FC, ReactNode } from "react"
-import {
-  Divider,
-  Header,
-  Hint,
-  Paragraph,
-  SignFoot,
-  SignRoot,
-  SignSurface,
-} from "./styled"
+import ReactPlayer from "react-player"
+import { Divider, Paragraph, SignFoot, SignRoot, SignSurface } from "./styled"
 
 type SignProps = {
-  title?: string
-  hint?: string
-  animate?: boolean
-  children: ReactNode
+  videoUrl?: string
+  title?: ReactNode
+  hint?: ReactNode
+  children?: ReactNode
+  divider?: boolean
 }
 
 const Sign: FC<SignProps> = ({
-  title = "A title",
+  title,
   hint,
-  animate: animateTitle = false,
   children,
+  videoUrl,
+  divider = false,
 }) => {
   return (
     <SignRoot>
       <SignSurface>
-        <Header animate={animateTitle}>{title}</Header>
-        <Paragraph>{children}</Paragraph>
-        <Divider />
-        <Hint animate={animateTitle}>{hint}</Hint>
+        {title}
+        {!videoUrl && children && <Paragraph>{children}</Paragraph>}
+        {videoUrl && (
+          <ReactPlayer
+            style={{ flex: "1" }}
+            width="100%"
+            height="auto"
+            url={videoUrl}
+          />
+        )}
+        {divider && <Divider />}
+        {hint}
       </SignSurface>
       <SignFoot />
     </SignRoot>
