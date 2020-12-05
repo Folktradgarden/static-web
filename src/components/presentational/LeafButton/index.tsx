@@ -31,7 +31,7 @@ const LeafButton: FC<LeafButtonProps> = ({ isActive, toggle }) => {
       animate={isActive ? "active" : "inActive"}
       onClick={() => toggle()}
     >
-      <LeafIcon animate />
+      <LeafIcon />
     </LeafButtonRoot>
   )
 }

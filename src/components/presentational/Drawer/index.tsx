@@ -36,7 +36,7 @@ const Drawer: FC<DrawerProps> = ({ isOpen, toggle, children }) => {
 
   const containerVariants: Variants = {
     open: {
-      width: "70%",
+      width: "80%",
     },
     closed: {
       width: "0",

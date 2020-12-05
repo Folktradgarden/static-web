@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import styled from "styled-components"
+import { globalWidthBreakpoints } from "../../../styling/GlobalStyle"
 
 export const DrawerBackground = styled(motion.div)`
   position: absolute;
@@ -24,6 +25,10 @@ export const Container = styled(motion.div)`
 export const LinkContainer = styled.div`
   width: 100%;
   margin-top: 4rem;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
+    margin-top: 6rem;
+  }
 `
 
 export const IconContainer = styled.div`
@@ -35,6 +40,11 @@ export const IconContainer = styled.div`
   bottom: 0;
   height: 48px;
   width: 106px;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
+    height: 64px;
+    width: 144px;
+  }
 `
 
 export const Anchor = styled.a`

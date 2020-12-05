@@ -1,17 +1,22 @@
 import styled from "styled-components"
+import { globalWidthBreakpoints } from "../../../styling/GlobalStyle"
 
 type RootProps = {
-  justify: boolean
-  align: boolean
-  row: boolean
+  padding: string
 }
 
 export const PageWrapperRoot = styled.div<RootProps>`
   display: flex;
-  flex-direction: ${({ row }) => (row ? "row" : "column")};
-  justify-content: ${({ justify }) => justify && "center"};
-  align-items: ${({ align }) => align && "center"};
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  padding: 4rem 1rem 1rem 1rem;
   height: 100%;
+  min-height: 800px;
+  width: 100%;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    flex-direction: row;
+    max-width: 1350px;
+  }
 `

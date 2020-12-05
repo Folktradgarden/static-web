@@ -3,22 +3,11 @@ import { PageWrapperRoot } from "./styled"
 
 type PageWrapperProps = {
   children?: ReactNode
-  justify?: boolean
-  align?: boolean
-  row?: boolean
+  padding?: string
 }
 
-const PageWrapper: FC<PageWrapperProps> = ({
-  children,
-  justify = false,
-  align = false,
-  row = false,
-}) => {
-  return (
-    <PageWrapperRoot justify={justify} align={align} row={row}>
-      {children}
-    </PageWrapperRoot>
-  )
+const PageWrapper: FC<PageWrapperProps> = ({ children, padding = "" }) => {
+  return <PageWrapperRoot padding={padding}>{children}</PageWrapperRoot>
 }
 
 export default PageWrapper

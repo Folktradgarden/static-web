@@ -14,6 +14,8 @@ const GlobalStyle = createGlobalStyle`
       height: 100%;
 
       > div {
+        display: flex;
+        justify-content: center;
         height 100%;
       }
     }
@@ -64,5 +66,11 @@ const GlobalStyle = createGlobalStyle`
     src: url("../../../fonts/JosefinSlab-Medium.ttf") format("truetype");
   }
 `
+export const globalWidthBreakpoints = {
+  sm: "576px",
+  md: "768px",
+  lg: "992px",
+  xl: "1200px",
+}
 
 export default GlobalStyle
