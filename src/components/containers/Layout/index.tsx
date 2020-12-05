@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react"
-import GlobalStyle from "../../styling/GlobalStyle"
-import ThemeWrapper from "../../styling/ThemeWrapper"
+import GlobalStyle from "../../../styling/GlobalStyle"
+import ThemeWrapper from "../../../styling/ThemeWrapper"
 import Navigation from "../Navigation"
 
 type LayoutProps = {

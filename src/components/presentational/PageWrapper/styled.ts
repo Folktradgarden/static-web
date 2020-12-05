@@ -13,8 +13,10 @@ export const PageWrapperRoot = styled.div<RootProps>`
   box-sizing: border-box;
   height: 100%;
   min-height: 800px;
+  width: 100%;
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
     flex-direction: row;
+    max-width: 1350px;
   }
 `

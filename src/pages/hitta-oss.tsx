@@ -1,4 +1,27 @@
+import { PageProps } from "gatsby"
+import React, { FC } from "react"
+import Layout from "../components/containers/Layout"
+import Map from "../components/presentational/Map"
+import PageWrapper from "../components/presentational/PageWrapper"
 import styled from "styled-components"
+
+const HittaOss: FC<PageProps> = () => {
+  return (
+    <Layout>
+      <PageWrapper>
+        <AddressContainer>
+          <Street>Kunskapslänken</Street>
+          <ZipCity>585 98 Linköping</ZipCity>
+        </AddressContainer>
+        <MapContainer>
+          <Map />
+        </MapContainer>
+      </PageWrapper>
+    </Layout>
+  )
+}
+
+export default HittaOss
 
 export const AddressContainer = styled.div`
   display: flex;

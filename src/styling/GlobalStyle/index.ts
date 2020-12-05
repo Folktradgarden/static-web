@@ -14,6 +14,8 @@ const GlobalStyle = createGlobalStyle`
       height: 100%;
 
       > div {
+        display: flex;
+        justify-content: center;
         height 100%;
       }
     }

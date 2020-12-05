@@ -22,8 +22,9 @@ const FTLogo: FC<FTLogoProps> = ({ animate = false }) => {
               >
                 <StrokedPath
                   id="logoCircle"
-                  fillOpacity="0"
+                  fillOpacity="1"
                   stroke="#5f321c"
+                  fill="#EDE7D4"
                   strokeDasharray="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -42,7 +43,8 @@ const FTLogo: FC<FTLogoProps> = ({ animate = false }) => {
               />
               <StrokedPath
                 id="logoSign"
-                fillOpacity="0"
+                fillOpacity="1"
+                fill="#EDE7D4"
                 fillRule="evenodd"
                 stroke="#5f321c"
                 strokeDasharray="none"
