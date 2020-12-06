@@ -11,6 +11,7 @@ import NavigationLink from "../../presentational/NavigationLink"
 
 type LinkEdge = {
   node: {
+    id: string
     name: string
     resource: string
   }

@@ -3,6 +3,7 @@ import { globalWidthBreakpoints } from "../../../styling/GlobalStyle"
 
 type RootProps = {
   padding: string
+  column: boolean
 }
 
 export const PageWrapperRoot = styled.div<RootProps>`
@@ -11,12 +12,12 @@ export const PageWrapperRoot = styled.div<RootProps>`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  height: 100%;
   min-height: 800px;
   width: 100%;
+  height: 100%;
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    flex-direction: row;
+    flex-direction: ${({ column }) => (column ? "column" : "row")};
     max-width: 1350px;
   }
 `

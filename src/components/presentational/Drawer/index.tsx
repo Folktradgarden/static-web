@@ -1,6 +1,7 @@
-import { Variants } from "framer-motion"
-import React, { FC, ReactNode } from "react"
+import { useAnimation, Variants } from "framer-motion"
+import React, { FC, ReactNode, useEffect } from "react"
 import { facebookUrl, instagramUrl } from "../../../constants"
+import useViewport from "../../../hooks/useViewport"
 import FacebookIcon from "../Icons/FacebookIcon"
 import InstagramIcon from "../Icons/InstagramIcon"
 import {
@@ -17,7 +18,20 @@ type DrawerProps = {
   toggle: () => void
 }
 
-const Drawer: FC<DrawerProps> = ({ isOpen, toggle, children }) => {
+const Drawer: FC<DrawerProps> = ({ isOpen, children }) => {
+  const controls = useAnimation()
+
+  const viewportSize = useViewport()
+  const [viewportWidth] = viewportSize
+
+  useEffect(() => {
+    if (isOpen) {
+      controls.start("open")
+    } else {
+      controls.start("closed")
+    }
+  }, [viewportWidth, isOpen])
+
   const backgroundVariants: Variants = {
     open: {
       backgroundColor: "rgba(0, 0, 0, 0.3)",
@@ -30,24 +44,27 @@ const Drawer: FC<DrawerProps> = ({ isOpen, toggle, children }) => {
         display: {
           delay: 0.5,
         },
+        backgroundColor: {
+          delay: 0.1,
+        },
       },
     },
   }
 
   const containerVariants: Variants = {
     open: {
-      width: "80%",
+      width: viewportWidth < 576 ? "300px" : "576px",
     },
     closed: {
-      width: "0",
+      width: "0px",
     },
   }
 
   return (
     <>
       <DrawerBackground
-        initial={true}
-        animate={isOpen ? "open" : "closed"}
+        initial={false}
+        animate={controls}
         variants={backgroundVariants}
         transition={{
           type: "tween",
@@ -56,11 +73,11 @@ const Drawer: FC<DrawerProps> = ({ isOpen, toggle, children }) => {
       />
       <Container
         initial={false}
-        animate={isOpen ? "open" : "closed"}
+        animate={controls}
         variants={containerVariants}
         transition={{
-          type: "spring",
-          duration: 1,
+          duration: 0.5,
+          ease: "easeInOut",
         }}
       >
         <LinkContainer>{children}</LinkContainer>

@@ -16,7 +16,7 @@ export const Container = styled(motion.div)`
   z-index: 2;
   top: 0;
   right: 0;
-  width: 256px;
+  width: 0;
   height: 100%;
   background-color: ${({ theme }) => theme.colors.surface};
   overflow: hidden;
@@ -27,7 +27,7 @@ export const LinkContainer = styled.div`
   margin-top: 4rem;
 
   @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
-    margin-top: 6rem;
+    margin-top: 5rem;
   }
 `
 

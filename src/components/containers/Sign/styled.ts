@@ -3,15 +3,19 @@ import { globalWidthBreakpoints } from "../../../styling/GlobalStyle"
 
 export const SignRoot = styled.div`
   position: relative;
-  height: 100%;
+  height: auto;
   width: 95%;
-  box-sizing: border-box;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    height: 100%;
+  }
 `
 
 export const SignSurface = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
+  margin-bottom: 10rem;
   z-index: 1;
   top: 5%;
   right: 0;
@@ -38,7 +42,7 @@ export const SignSurface = styled.div`
     top: 15%;
     left: 5%;
     right: 5%;
-    border-width: 4px;
+    border-width: min(0.3vw, 4px);
   }
 `
 

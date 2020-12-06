@@ -4,8 +4,7 @@ import { MapContainer, Marker, TileLayer } from "react-leaflet"
 import markerIcon from "../../../../static/images/marker.png"
 import { MapRoot } from "./styled"
 
-const url =
-  "https://api.mapbox.com/styles/v1/maxbekkhus/cki5563ue1hoc19rnrxeu0v5q/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWF4YmVra2h1cyIsImEiOiJja2k1Nm1iMmQzaTRpMnJwNWpjZjVrZDVyIn0.FXS3jOGpTJ-idJRZXpbCPA"
+const url = `https://api.mapbox.com/styles/v1/maxbekkhus/${process.env.MAPBOX_STYLE_ID}/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.MAPBOX_TOKEN}`
 
 const centerPosition: L.LatLngTuple = [58.393181196361, 15.603732328477589]
 const markerPosition: L.LatLngTuple = [58.393181196361, 15.603732328477589]
