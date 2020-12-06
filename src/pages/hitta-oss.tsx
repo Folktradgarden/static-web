@@ -1,4 +1,4 @@
-import { PageProps } from "gatsby"
+import { graphql, PageProps, useStaticQuery } from "gatsby"
 import React, { FC } from "react"
 import Layout from "../components/containers/Layout"
 import Map from "../components/presentational/Map"
@@ -6,13 +6,35 @@ import PageWrapper from "../components/presentational/PageWrapper"
 import styled from "styled-components"
 import { globalWidthBreakpoints } from "../styling/GlobalStyle"
 
+const query = graphql`
+  query MyQuery {
+    allContentfulHittaOss {
+      edges {
+        node {
+          street
+          zipCode
+          city
+        }
+      }
+    }
+  }
+`
+
 const HittaOss: FC<PageProps> = () => {
+  const queryResponse = useStaticQuery(query)
+
+  const {
+    street,
+    zipCode,
+    city,
+  } = queryResponse.allContentfulHittaOss.edges[0].node
+
   return (
     <Layout>
       <PageWrapper column={true}>
         <AddressContainer>
-          <Street>Kunskapslänken</Street>
-          <ZipCity>585 98 Linköping</ZipCity>
+          <Street>{street}</Street>
+          <ZipCity>{`${zipCode} ${city}`}</ZipCity>
         </AddressContainer>
         <MapContainer>
           <Map />
