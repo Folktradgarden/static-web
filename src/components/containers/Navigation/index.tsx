@@ -35,8 +35,6 @@ const query = graphql`
 const linkIcons = [
   <HouseIcon />,
   <BookIcon color="accent" />,
-  <ShovelIcon color="accent" />,
-  <PaperPlaneIcon color="accent" />,
   <BinocularsIcon color="accent" />,
 ]
 
