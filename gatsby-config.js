@@ -30,5 +30,11 @@ module.exports = {
         host: contentfulPreviewHost,
       },
     },
+    {
+      resolve: "gatsby-plugin-env-variables",
+      options: {
+        allowList: ["MAPBOX_TOKEN", "MAPBOX_STYLE_ID"],
+      },
+    },
   ],
 }
