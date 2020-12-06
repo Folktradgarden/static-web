@@ -44,6 +44,8 @@ const Navigation: FC = () => {
 
   const linkEdges = queryResponse.allContentfulLankLista.edges
 
+  console.log(linkEdges)
+
   return (
     <>
       <Drawer isOpen={isOpen} toggle={() => setIsOpen(!isOpen)}>

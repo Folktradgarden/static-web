@@ -73,4 +73,7 @@ export const globalWidthBreakpoints = {
   xl: "1200px",
 }
 
+export const getCustomViewportHeight = (value: number): string =>
+  `calc(var(--vh, 1vh) * ${value})`
+
 export default GlobalStyle

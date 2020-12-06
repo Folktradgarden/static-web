@@ -10,36 +10,21 @@ import {
 } from "./styled"
 
 type SignProps = {
-  videoUrl?: string
   title?: ReactNode
   hint?: ReactNode
   children?: ReactNode
   divider?: boolean
 }
 
-const Sign: FC<SignProps> = ({
-  title,
-  hint,
-  children,
-  videoUrl,
-  divider = false,
-}) => {
+const Sign: FC<SignProps> = ({ title, hint, children, divider = false }) => {
   return (
     <SignRoot>
       <SignSurface>
         {title}
-        {!videoUrl && children && (
+        {children && (
           <ParagraphContainer>
             <Paragraph>{children}</Paragraph>
           </ParagraphContainer>
-        )}
-        {videoUrl && (
-          <ReactPlayer
-            style={{ flex: "1" }}
-            width="100%"
-            height="auto"
-            url={videoUrl}
-          />
         )}
         {divider && <Divider />}
         {hint}
