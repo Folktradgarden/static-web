@@ -36,5 +36,6 @@ module.exports = {
         allowList: ["MAPBOX_TOKEN", "MAPBOX_STYLE_ID"],
       },
     },
+    `gatsby-plugin-react-helmet`,
   ],
 }

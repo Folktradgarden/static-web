@@ -3,9 +3,9 @@ import React, { FC } from "react"
 import Layout from "../components/containers/Layout"
 import PageWrapper from "../components/presentational/PageWrapper"
 
-const Kontakt: FC<PageProps> = () => {
+const Kontakt: FC<PageProps> = ({ path }) => {
   return (
-    <Layout>
+    <Layout path={path}>
       <PageWrapper>
         <h1>Kontakt</h1>
       </PageWrapper>

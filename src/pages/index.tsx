@@ -30,7 +30,7 @@ const query = graphql`
   }
 `
 
-const Home: FC<PageProps> = () => {
+const Home: FC<PageProps> = ({ path }) => {
   const queryResponse = useStaticQuery(query)
 
   const {
@@ -57,7 +57,7 @@ const Home: FC<PageProps> = () => {
   console.log(videoUrl)
 
   return (
-    <Layout>
+    <Layout path={path}>
       <PageWrapper>
         <StartSection>
           <LogoContainer>
