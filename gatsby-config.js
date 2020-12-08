@@ -15,6 +15,13 @@ if (isDev) {
 }
 
 let plugins = [
+  {
+    resolve: "gatsby-plugin-google-analytics",
+    options: {
+      trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+      head: true,
+    },
+  },
   "gatsby-plugin-styled-components",
   `gatsby-plugin-react-helmet`,
   {
@@ -35,12 +42,6 @@ let plugins = [
     resolve: "gatsby-plugin-env-variables",
     options: {
       allowList: ["MAPBOX_TOKEN", "MAPBOX_STYLE_ID"],
-    },
-  },
-  {
-    resolve: "gatsby-plugin-google-analytics",
-    options: {
-      trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
     },
   },
 ]
