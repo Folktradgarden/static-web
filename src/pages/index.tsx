@@ -18,7 +18,9 @@ const query = graphql`
       edges {
         node {
           id
-          paragraph
+          paragraph {
+            paragraph
+          }
           hintFirst
           hintSecond
           videoUrl
@@ -42,7 +44,7 @@ const Home: FC<PageProps> = ({ path }) => {
     title,
   } = queryResponse.allContentfulHem.edges[0].node
 
-  const renderTitle = () => <Title animate={false}>{title}</Title>
+  const renderTitle = () => <Title animate={false}>{title || ""}</Title>
 
   const renderHint = () => (
     <Hint animate={false}>
@@ -69,7 +71,7 @@ const Home: FC<PageProps> = ({ path }) => {
               title={showTitle && renderTitle()}
               hint={renderHint()}
             >
-              {paragraph}
+              {paragraph.paragraph}
             </Sign>
           </SignContainer>
         </StartSection>
