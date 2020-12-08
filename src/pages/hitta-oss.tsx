@@ -105,6 +105,7 @@ export const MapContainer = styled.div`
   box-sizing: border-box;
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    max-width: 1200px;
     margin-bottom: 5rem;
   }
 `
