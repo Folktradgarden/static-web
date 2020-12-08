@@ -56,8 +56,6 @@ const Home: FC<PageProps> = ({ path }) => {
     </Hint>
   )
 
-  console.log(videoUrl)
-
   return (
     <Layout path={path}>
       <PageWrapper>
