@@ -15,6 +15,6 @@ exports.handler = async function (event, context) {
   return {
     statusCode: 200,
     headers: { "Content-Type": "application/json" },
-    body: body ? JSON.stringify(body) : undefined,
+    body: body,
   }
 }
