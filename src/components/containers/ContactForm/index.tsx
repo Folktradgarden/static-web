@@ -1,4 +1,5 @@
 import React, { FC } from "react"
+import { useForm } from "react-hook-form"
 import {
   FieldLabel,
   Form,
@@ -15,15 +16,20 @@ type ContactFormProps = {
   buttonText: string
 }
 
+type SubmitValues = {
+  subject: string
+  message: string
+  spam: string
+}
+
 const ContactForm: FC<ContactFormProps> = ({
   subjectLabel,
   messageLabel,
   buttonText,
 }) => {
-  const onClick = async (
-    e: React.MouseEvent<HTMLHeadingElement, MouseEvent>
-  ) => {
-    e.preventDefault()
+  const { handleSubmit, register } = useForm()
+
+  const onSubmit = async (data: SubmitValues) => {
     const res = await fetch("/.netlify/functions/sendGrid", {
       method: "GET",
     })
@@ -34,21 +40,21 @@ const ContactForm: FC<ContactFormProps> = ({
   }
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       <FormGroup>
         <FieldLabel>{subjectLabel}</FieldLabel>
-        <InputField />
+        <InputField ref={register()} name="subject" />
       </FormGroup>
       <FormGroup>
         <FieldLabel>{messageLabel}</FieldLabel>
-        <TextArea />
+        <TextArea ref={register()} name="message" />
       </FormGroup>
       <FormGroup>
         <FieldLabel>Är du en robot?</FieldLabel>
-        <InputField placeholder="Säg nej..." />
+        <InputField ref={register()} name="spam" placeholder="Säg nej..." />
       </FormGroup>
       <Divider />
-      <SubmitButton>{buttonText}</SubmitButton>
+      <SubmitButton type="submit">{buttonText}</SubmitButton>
     </Form>
   )
 }

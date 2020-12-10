@@ -30,7 +30,6 @@ const getTitle = (path: string): string => {
 }
 
 const SEO: FC<SEOProps> = ({ path }) => {
-  console.log(path)
   return (
     <Helmet>
       <title>{getTitle(path)}</title>
