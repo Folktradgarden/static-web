@@ -109,6 +109,7 @@ export const SubmitButton = styled.button<SubmitButtonProps>`
   max-height: 3.9rem;
   min-height: 3.9rem;
   outline: none;
+  cursor: pointer;
 `
 
 export const Loader = styled.div`

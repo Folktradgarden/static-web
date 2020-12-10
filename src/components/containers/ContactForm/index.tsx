@@ -92,7 +92,10 @@ const ContactForm: FC<ContactFormProps> = ({
       <FormGroup>
         <FieldLabel>Är du en robot?</FieldLabel>
         <InputField
-          ref={register({ required: spamError })}
+          ref={register({
+            required: spamError,
+            validate: value => value.toLowerCase() === "nej" || spamError,
+          })}
           name="spam"
           disabled={isSubmitting}
           autoComplete="off"
