@@ -26,6 +26,11 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.background};
   }
 
+  @keyframes rotate-frames {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
   @keyframes color-fill-frames {
     0%,
     40% {

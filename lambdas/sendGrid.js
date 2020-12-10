@@ -14,25 +14,17 @@ exports.handler = async function (event, context) {
 
   let statusCode = 200
 
-  try {
-    await sendGrid.send(message)
+  if (body.spam.toLowerCase() === "nej") {
+    try {
+      await sendGrid.send(message)
 
-    console.log(`
-    # SUCCESS
-    # ------------------------------
-    # Subject:
-    #   ${body.subject}
-    # Text:
-    #   ${body.message}
-    `)
-  } catch (e) {
+      console.log(`EMAIL SUCCESSFULLY SENT!`)
+    } catch (e) {
+      statusCode = 500
+      console.log(`FAILED TO SEND EMAIL! | ${e.message}`)
+    }
+  } else {
     statusCode = 500
-    console.log(`
-    # FAILURE
-    # ------------------------------
-    # Error:
-    #   ${e.message}
-    `)
   }
 
   return {

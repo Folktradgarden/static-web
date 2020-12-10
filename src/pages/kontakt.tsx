@@ -4,6 +4,7 @@ import styled from "styled-components"
 import ContactForm from "../components/containers/ContactForm"
 import Layout from "../components/containers/Layout"
 import PageWrapper from "../components/presentational/PageWrapper"
+import { globalWidthBreakpoints } from "../styling/GlobalStyle"
 
 const query = graphql`
   query {
@@ -46,7 +47,11 @@ const Kontakt: FC<PageProps> = ({ path }) => {
           <FormContainer>
             <ContactForm
               subjectLabel={labelSubject}
+              subjectRequiredError="Du måste ange ett ämne."
               messageLabel={labelMessage}
+              messageRequiredError="Du måste ange ett meddelande."
+              messageMaxLimitError="Ett meddelande får max innehålla 256 tecken."
+              spamError="Är du verkligen en robot?"
               buttonText={buttonSend}
             />
           </FormContainer>
@@ -61,6 +66,10 @@ export default Kontakt
 const PageContainer = styled.div`
   margin-top: 3.5rem;
   padding: 0 1rem;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    max-width: 900px;
+  }
 `
 
 const TextContainer = styled.div``

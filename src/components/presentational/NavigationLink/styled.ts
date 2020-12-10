@@ -1,6 +1,5 @@
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { globalWidthBreakpoints } from "../../../styling/GlobalStyle"
 
 export const StyledGatsbyLink = styled(Link)`
   text-decoration: none;
@@ -14,10 +13,6 @@ export const NavigationLinkRoot = styled.div`
   box-sizing: border-box;
   margin-bottom: 0.5rem;
   background-color: ${({ theme }) => theme.colors.background};
-
-  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
-    margin-bottom: 0.7rem;
-  }
 `
 
 export const IconContainer = styled.div`
@@ -29,10 +24,6 @@ export const IconContainer = styled.div`
   height: 46px;
   padding: 10px 0;
   box-sizing: border-box;
-
-  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
-    height: 64px;
-  }
 `
 
 export const TextContainer = styled.div`
@@ -43,12 +34,6 @@ export const TextContainer = styled.div`
   margin-left: 10px;
   padding-top: 7px;
   box-sizing: border-box;
-
-  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
-    height: 64px;
-    padding-top: 12px;
-    margin-left: 20px;
-  }
 `
 
 export const Text = styled.p`
@@ -58,8 +43,4 @@ export const Text = styled.p`
   text-transform: uppercase;
   white-space: nowrap;
   text-overflow: ellipsis;
-
-  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
-    font-size: 36px;
-  }
 `
