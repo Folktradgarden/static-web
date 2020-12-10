@@ -40,11 +40,6 @@ export const IconContainer = styled.div`
   bottom: 0;
   height: 48px;
   width: 106px;
-
-  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
-    height: 64px;
-    width: 144px;
-  }
 `
 
 export const Anchor = styled.a`

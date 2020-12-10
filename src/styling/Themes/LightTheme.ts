@@ -12,9 +12,11 @@ const LightTheme: DefaultTheme = {
     surface: "#EDE7D4",
     onSurface: "#5F321C",
     background: "#E7DFC6",
+    backgroundDark: "#E1D6B7",
     onBackground: "#5F321C",
     facebook: "#05668D",
     instagram: "#FF5A5F",
+    error: "#F15156",
   },
   border: {
     radius: "4px",

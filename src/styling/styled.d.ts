@@ -13,9 +13,11 @@ declare module "styled-components" {
       surface: string
       onSurface: string
       background: string
+      backgroundDark: string
       onBackground: string
       facebook: string
       instagram: string
+      error: string
     }
     border: {
       radius: string
