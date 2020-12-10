@@ -30,15 +30,16 @@ const ContactForm: FC<ContactFormProps> = ({
   const { handleSubmit, register } = useForm()
 
   const onSubmit = async (data: SubmitValues) => {
-    if (data.subject.toLowerCase() === "nej") {
+    if (data.spam.toLowerCase() === "nej") {
       const res = await fetch("/.netlify/functions/sendGrid", {
         method: "POST",
         body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
 
       const json = await res.json()
-
-      console.log(json)
     }
   }
 
