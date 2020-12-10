@@ -1,8 +1,6 @@
 const sendGrid = require("@sendgrid/mail")
 
 exports.handler = async function (event, context) {
-  console.log(body)
-
   // sendGrid.setApiKey(process.env.SEND_GRID_API_KEY)
 
   // const message = {
@@ -17,6 +15,6 @@ exports.handler = async function (event, context) {
   return {
     statusCode: 200,
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
+    body: body ? JSON.stringify(body) : undefined,
   }
 }
