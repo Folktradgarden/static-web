@@ -34,6 +34,8 @@ const ContactForm: FC<ContactFormProps> = ({
       method: "GET",
     })
 
+    console.log(res)
+
     const json = await res.json()
 
     console.log(json)
