@@ -33,10 +33,8 @@ const ContactForm: FC<ContactFormProps> = ({
     const res = await fetch("/.netlify/functions/sendGrid", {
       method: "GET",
     })
-
+    console.log(res)
     const json = await res.json()
-
-    console.log(json)
   }
 
   return (
