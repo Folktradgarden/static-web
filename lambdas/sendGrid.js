@@ -17,22 +17,10 @@ exports.handler = async function (event, context) {
   try {
     await sendGrid.send(message)
 
-    console.log(`
-    # SUCCESS
-    # ------------------------------
-    # Subject:
-    #   ${body.subject}
-    # Text:
-    #   ${body.message}
-    `)
+    console.log(`EMAIL SUCCESSFULLY SENT!`)
   } catch (e) {
     statusCode = 500
-    console.log(`
-    # FAILURE
-    # ------------------------------
-    # Error:
-    #   ${e.message}
-    `)
+    console.log(`FAILED TO SEND EMAIL! | ${e.message}`)
   }
 
   return {

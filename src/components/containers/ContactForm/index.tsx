@@ -55,7 +55,7 @@ const ContactForm: FC<ContactFormProps> = ({
       </FormGroup>
       <FormGroup>
         <FieldLabel>Är du en robot?</FieldLabel>
-        <InputField ref={register()} name="spam" placeholder="Säg nej..." />
+        <InputField ref={register()} name="spam" />
       </FormGroup>
       <Divider />
       <SubmitButton type="submit">{buttonText}</SubmitButton>

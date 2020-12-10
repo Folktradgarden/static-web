@@ -21,17 +21,21 @@ export const FieldLabel = styled.label`
 
 export const InputField = styled.input`
   font-size: 1.2rem;
-  border: none;
+  border: 2px solid ${({ theme }) => theme.colors.secondary};
   background-color: ${({ theme }) => theme.colors.surface};
   padding: 0.8rem 0 0.6rem 0.4rem;
   text-decoration: none;
   outline: none;
   color: ${({ theme }) => theme.colors.secondary};
+
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.secondary + "77"};
+  }
 `
 
 export const TextArea = styled.textarea`
   font-size: 1.2rem;
-  border: none;
+  border: 2px solid ${({ theme }) => theme.colors.secondary};
   background-color: ${({ theme }) => theme.colors.surface};
   padding: 0.8rem 0 0.6rem 0.4rem;
   box-sizing: border-box;
@@ -40,6 +44,10 @@ export const TextArea = styled.textarea`
   height: 200px;
   resize: none;
   color: ${({ theme }) => theme.colors.secondary};
+
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.secondary + "77"};
+  }
 `
 
 export const Divider = styled.div`
