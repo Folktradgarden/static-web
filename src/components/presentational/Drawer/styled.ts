@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { globalWidthBreakpoints } from "../../../styling/GlobalStyle"
 
 export const DrawerBackground = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 0;
   left: 0;
@@ -12,7 +12,7 @@ export const DrawerBackground = styled(motion.div)`
 `
 
 export const Container = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 0;
   right: 0;

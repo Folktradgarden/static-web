@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { globalWidthBreakpoints } from "../../../styling/GlobalStyle"
 
 export const LeafButtonRoot = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   z-index: 2;
   display: flex;
   justify-content: center;

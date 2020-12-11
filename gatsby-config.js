@@ -22,7 +22,8 @@ let plugins = [
     },
   },
   "gatsby-plugin-styled-components",
-  `gatsby-plugin-react-helmet`,
+  "gatsby-plugin-react-helmet",
+  "gatsby-plugin-preload-fonts",
   {
     resolve: "gatsby-plugin-react-leaflet",
     options: {
