@@ -92,3 +92,49 @@ export const Divider = styled.div`
     ${({ theme }) => `${theme.border.width} ${theme.colors.secondary}`};
   margin: 0.5rem 0 0.7rem 0;
 `
+type TitleProps = {
+  animate: boolean
+}
+
+export const Title = styled.h2<TitleProps>`
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: ${({ theme }) => theme.colors.primary};
+  text-transform: uppercase;
+
+  animation: ${({ animate }) =>
+    animate ? "color-text-frames 30s linear" : "none"};
+`
+
+type HintProps = {
+  animate: boolean
+}
+
+export const Hint = styled.p<HintProps>`
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.secondary};
+  animation: ${({ animate }) =>
+    animate ? "color-text-frames 30s linear" : "none"};
+  text-transform: uppercase;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
+    font-size: 2.2rem;
+  }
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    font-size: min(2vw, 2.25rem);
+  }
+`
+export const IconContainer = styled.span`
+  display: inline-block;
+  width: 1.2rem;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
+    width: 2rem;
+  }
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    width: min(1.8vw, 2rem);
+  }
+`

@@ -4,7 +4,6 @@ const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    font-family: "Josefin Slab";
   }
 
   html, body {
@@ -69,6 +68,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Josefin Slab";
     font-weight: 500;
     src: url("../../../fonts/JosefinSlab-Medium.ttf") format("truetype");
+  }
+
+  * {
+    font-family: "Josefin Slab", "Helvetica";
   }
 `
 export const globalWidthBreakpoints = {

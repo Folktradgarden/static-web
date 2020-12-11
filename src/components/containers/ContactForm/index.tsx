@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react"
-import { useForm } from "react-hook-form"
+import { SubmitHandler, useForm } from "react-hook-form"
 import FlowerIcon from "../../presentational/Icons/FlowerIcon"
 import {
   FieldLabel,
@@ -41,7 +41,12 @@ const ContactForm: FC<ContactFormProps> = ({
   const { handleSubmit, register, errors, reset, setValue } = useForm()
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
 
-  const onSubmit = async (data: SubmitValues) => {
+  const onSubmit: SubmitHandler<SubmitValues> = async (
+    data: SubmitValues,
+    e: React.BaseSyntheticEvent<object, any, any> | undefined
+  ) => {
+    e && e.preventDefault()
+
     if (data.spam.toLowerCase() === "nej") {
       setIsSubmitting(true)
 
