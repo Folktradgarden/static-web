@@ -4,18 +4,20 @@ const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
+
+    -webkit-tap-highlight-color: transparent;
   }
 
   html, body {
-    height: 100%;
+    min-height: 100vh;
 
     > div {
-      height: 100%;
+      min-height: 100vh;
 
       > div {
         display: flex;
         justify-content: center;
-        height 100%;
+        min-height 100vh;
       }
     }
 

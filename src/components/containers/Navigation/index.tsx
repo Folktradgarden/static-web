@@ -5,58 +5,84 @@ import BinocularsIcon from "../../presentational/Icons/BinocularsIcon"
 import BookIcon from "../../presentational/Icons/BookIcon"
 import HouseIcon from "../../presentational/Icons/HouseIcon"
 import PaperPlaneIcon from "../../presentational/Icons/PaperPlaneIcon"
-import ShovelIcon from "../../presentational/Icons/ShovelIcon"
+import VideoIcon from "../../presentational/Icons/VideoIcon"
 import LeafButton from "../../presentational/LeafButton"
-import NavigationLink from "../../presentational/NavigationLink"
+import NavigationLink, { SubPath } from "../../presentational/NavigationLink"
 
-type LinkEdge = {
-  node: {
-    id: string
-    name: string
-    resource: string
-  }
+type LinkMeta = {
+  name: string
+  resource: string
+  icon: (isActive: boolean) => JSX.Element
+  subPaths?: SubPath[] | undefined
+  defaultIsOpen: boolean
+  fragment?: string
 }
 
-const query = graphql`
-  query {
-    allContentfulLankLista(sort: { fields: createdAt }) {
-      edges {
-        node {
-          id
-          name
-          resource
-          createdAt
-        }
-      }
-    }
-  }
-`
-
-const linkIcons = [
-  <HouseIcon />,
-  <BookIcon color="accent" />,
-  <BinocularsIcon color="accent" />,
+const links: LinkMeta[] = [
+  {
+    name: "Hem",
+    resource: "/",
+    fragment: "#start",
+    icon: (isActive: boolean) => (
+      <HouseIcon color={isActive ? "primary" : "accent"} />
+    ),
+    subPaths: [
+      {
+        to: "/#om-oss",
+        text: "Om oss",
+        icon: <VideoIcon />,
+      },
+    ],
+    defaultIsOpen: true,
+  },
+  {
+    name: "Hitta Oss",
+    resource: "/hitta-oss",
+    icon: (isActive: boolean) => (
+      <BinocularsIcon color={isActive ? "primary" : "accent"} />
+    ),
+    defaultIsOpen: false,
+  },
+  {
+    name: "Kontakt",
+    resource: "/kontakt",
+    icon: (isActive: boolean) => (
+      <PaperPlaneIcon color={isActive ? "primary" : "accent"} />
+    ),
+    defaultIsOpen: false,
+  },
 ]
 
-const Navigation: FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-  const queryResponse = useStaticQuery(query)
+type NavigationProps = {
+  currentPath: string
+}
 
-  const linkEdges = queryResponse.allContentfulLankLista.edges
+const Navigation: FC<NavigationProps> = ({ currentPath }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [animationDuration] = useState<number>(0.5)
 
   return (
     <>
-      <Drawer isOpen={isOpen} toggle={() => setIsOpen(!isOpen)}>
-        {linkEdges.map((edge: LinkEdge, index: number) => {
-          const link = edge.node
+      <Drawer
+        close={() => setIsOpen(false)}
+        animationDuration={animationDuration}
+        isOpen={isOpen}
+        toggle={() => setIsOpen(!isOpen)}
+      >
+        {links.map((link: LinkMeta, index: number) => {
           return (
             <NavigationLink
-              key={link.id}
-              to={link.resource}
-              icon={linkIcons[index]}
-            >
-              {link.name}
-            </NavigationLink>
+              key={link.resource}
+              to={link.resource + (link.fragment || "")}
+              icon={link.icon(currentPath === link.resource)}
+              text={link.name}
+              subPaths={link.subPaths}
+              defaultIsOpen={currentPath === link.resource}
+              animationDelay={animationDuration}
+              parentIsOpen={isOpen}
+              closeParent={() => setIsOpen(false)}
+              isActive={currentPath === link.resource}
+            />
           )
         })}
       </Drawer>

@@ -25,7 +25,7 @@ const query = graphql`
   }
 `
 
-const Kontakt: FC<PageProps> = ({ path }) => {
+const Kontakt: FC<PageProps> = ({ location }) => {
   const queryResponse = useStaticQuery(query)
 
   const {
@@ -37,7 +37,7 @@ const Kontakt: FC<PageProps> = ({ path }) => {
   } = queryResponse.allContentfulKontakt.edges[0].node
 
   return (
-    <Layout path={path}>
+    <Layout path={location.pathname}>
       <PageWrapper>
         <PageContainer>
           <TextContainer>

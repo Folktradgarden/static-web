@@ -10,6 +10,7 @@ import {
   globalWidthBreakpoints,
 } from "../styling/GlobalStyle"
 import ReactPlayer from "react-player"
+import ArrowIcon from "../components/presentational/Icons/ArrowIcon"
 
 const query = graphql`
   query {
@@ -31,9 +32,8 @@ const query = graphql`
   }
 `
 
-const Home: FC<PageProps> = ({ path }) => {
+const Home: FC<PageProps> = ({ location }) => {
   const queryResponse = useStaticQuery(query)
-
   const {
     paragraph,
     hintFirst,
@@ -44,9 +44,9 @@ const Home: FC<PageProps> = ({ path }) => {
   } = queryResponse.allContentfulHem.edges[0].node
 
   return (
-    <Layout path={path}>
+    <Layout path={location.pathname}>
       <PageWrapper>
-        <StartSection>
+        <StartSection id="start">
           <LogoContainer>
             <FTLogo animate />
           </LogoContainer>
@@ -59,8 +59,12 @@ const Home: FC<PageProps> = ({ path }) => {
               {paragraph.paragraph}
             </Sign>
           </SignContainer>
+          <BottomTextContainer>
+            <BottomText>Eller se en video om vår verksamhet!</BottomText>
+            <ArrowIcon />
+          </BottomTextContainer>
         </StartSection>
-        <VideoSection>
+        <VideoSection id="om-oss">
           <VideoTextContainer>
             <VideoTitle>Lorem Ipsum</VideoTitle>
             <VideoParagraph>
@@ -85,14 +89,14 @@ const Home: FC<PageProps> = ({ path }) => {
 export default Home
 
 const StartSection = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  min-height: max(800px, 100vh);
+  min-height: max(800px, ${getCustomViewportHeight(100)});
   width: 100%;
-  height: 100vh;
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
     flex-direction: row;
@@ -128,6 +132,34 @@ const SignContainer = styled.div`
     height: 35vw;
     max-height: 520px;
     align-items: center;
+  }
+`
+
+const BottomTextContainer = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 1%;
+  width: 100%;
+  text-align: center;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
+    > svg {
+      height: 36px;
+      width: 36px;
+    }
+  }
+`
+const BottomText = styled.p`
+  color: ${({ theme }) => theme.colors.secondaryDark};
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
+    font-size: 1.6rem;
   }
 `
 

@@ -20,9 +20,8 @@ const query = graphql`
   }
 `
 
-const HittaOss: FC<PageProps> = ({ path }) => {
+const HittaOss: FC<PageProps> = ({ location }) => {
   const queryResponse = useStaticQuery(query)
-
   const {
     street,
     zipCode,
@@ -30,7 +29,7 @@ const HittaOss: FC<PageProps> = ({ path }) => {
   } = queryResponse.allContentfulHittaOss.edges[0].node
 
   return (
-    <Layout path={path}>
+    <Layout path={location.pathname}>
       <PageWrapper column={true}>
         <AddressContainer>
           <Street>{street}</Street>

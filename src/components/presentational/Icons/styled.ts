@@ -12,9 +12,10 @@ type PathProps = {
   color: PathColor
 }
 
-export type SVGSize = "normal" | "medium" | "large"
+export type SVGSize = "small" | "normal" | "medium" | "large"
 
 const SVGSizeMap = {
+  small: "12px",
   normal: "24px",
   medium: "36px",
   large: "48px",

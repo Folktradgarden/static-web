@@ -16,10 +16,10 @@ const getTitle = (path: string): string => {
     case "/":
       title += "Hem"
       break
-    case "/hitta-oss/":
+    case "/hitta-oss":
       title += "Hitta Oss"
       break
-    case "/kontakt/":
+    case "/kontakt":
       title += "Kontakt"
       break
     default:

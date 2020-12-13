@@ -16,9 +16,16 @@ type DrawerProps = {
   children?: ReactNode
   isOpen: boolean
   toggle: () => void
+  animationDuration: number
+  close: () => void
 }
 
-const Drawer: FC<DrawerProps> = ({ isOpen, children }) => {
+const Drawer: FC<DrawerProps> = ({
+  isOpen,
+  children,
+  animationDuration,
+  close,
+}) => {
   const controls = useAnimation()
 
   const viewportSize = useViewport()
@@ -42,10 +49,10 @@ const Drawer: FC<DrawerProps> = ({ isOpen, children }) => {
       display: "none",
       transition: {
         display: {
-          delay: 0.5,
+          delay: animationDuration,
         },
         backgroundColor: {
-          delay: 0.1,
+          delay: animationDuration / 5,
         },
       },
     },
@@ -68,15 +75,16 @@ const Drawer: FC<DrawerProps> = ({ isOpen, children }) => {
         variants={backgroundVariants}
         transition={{
           type: "tween",
-          duration: 0.5,
+          duration: animationDuration,
         }}
+        onClick={() => close()}
       />
       <Container
         initial={false}
         animate={controls}
         variants={containerVariants}
         transition={{
-          duration: 0.5,
+          duration: animationDuration,
           ease: "easeInOut",
         }}
       >

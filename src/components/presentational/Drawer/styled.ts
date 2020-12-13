@@ -1,6 +1,9 @@
 import { motion } from "framer-motion"
 import styled from "styled-components"
-import { globalWidthBreakpoints } from "../../../styling/GlobalStyle"
+import {
+  getCustomViewportHeight,
+  globalWidthBreakpoints,
+} from "../../../styling/GlobalStyle"
 
 export const DrawerBackground = styled(motion.div)`
   position: fixed;
@@ -9,7 +12,7 @@ export const DrawerBackground = styled(motion.div)`
   left: 0;
   right: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 `
 
 export const Container = styled(motion.div)`
@@ -18,9 +21,8 @@ export const Container = styled(motion.div)`
   top: 0;
   right: 0;
   width: 0;
-  height: 100%;
+  height: 100vh;
   background-color: ${({ theme }) => theme.colors.surface};
-  overflow: hidden;
 `
 
 export const LinkContainer = styled.div`

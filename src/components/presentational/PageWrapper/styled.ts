@@ -12,5 +12,4 @@ export const PageWrapperRoot = styled.div<RootProps>`
   align-items: center;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
 `
