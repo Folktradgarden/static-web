@@ -61,9 +61,21 @@ const Home: FC<PageProps> = ({ path }) => {
           </SignContainer>
         </StartSection>
         <VideoSection>
-          <VideoContainer>
-            <ReactPlayer width="auto" height="100%" url={videoUrl} />
-          </VideoContainer>
+          <VideoTextContainer>
+            <VideoTitle>Lorem Ipsum</VideoTitle>
+            <VideoParagraph>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab illo
+              aperiam, commodi magnam asperiores maiores voluptate at suscipit
+              fugiat totam. Ducimus aliquam rem quo a error, esse dolorum
+              laboriosam quis!
+            </VideoParagraph>
+          </VideoTextContainer>
+          <VideoDivider />
+          <VideoAspectWrapper>
+            <VideoContainer>
+              <ReactPlayer width="100%" height="100%" url={videoUrl} />
+            </VideoContainer>
+          </VideoAspectWrapper>
         </VideoSection>
       </PageWrapper>
     </Layout>
@@ -78,9 +90,9 @@ const StartSection = styled.div`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  min-height: max(800px, ${getCustomViewportHeight(100)});
+  min-height: max(800px, 100vh);
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
     flex-direction: row;
@@ -125,20 +137,79 @@ const VideoSection = styled.div`
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  background-color: ${({ theme }) => theme.colors.surface};
   width: 100%;
-  min-height: ${getCustomViewportHeight(100)};
+  min-height: 100vh;
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    max-width: 1350px;
+    flex-direction: row;
   }
 `
-const VideoContainer = styled.div`
+const VideoTextContainer = styled.div`
   width: 90%;
-  height: 50.6vw;
-  margin: 2rem 0;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    width: 30%;
+    margin-right: 5rem;
+    margin-left: 10%;
+  }
+`
+
+const VideoTitle = styled.h3`
+  font-size: 1.8rem;
+  color: ${({ theme }) => theme.colors.accent};
+  text-transform: uppercase;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    font-size: min(3.6vw, 54.5px);
+  }
+`
+
+const VideoParagraph = styled.p`
+  margin-top: 0.6rem;
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.colors.secondaryDark};
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    font-size: min(2vw, 30.3px);
+  }
+`
+
+const VideoDivider = styled.div`
+  height: 0;
+  width: 90%;
+  border-top: solid
+    ${({ theme }) => `${theme.border.width} ${theme.colors.primary}`};
+  margin: 1rem 0;
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    display: none;
+  }
+`
+const VideoAspectWrapper = styled.div`
+  width: 90%;
   box-sizing: border-box;
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    max-height: 760px;
+    flex: 1;
+    border: solid ${({ theme }) => `min(0.3vw, 8px) ${theme.colors.secondary}`};
+    margin-right: 10%;
+    padding: 1%;
+    background-color: ${({ theme }) => theme.colors.background};
+  }
+`
+
+const VideoContainer = styled.div`
+  width: 100%;
+  padding: 28.125% 0;
+  position: relative;
+  box-sizing: content-box;
+
+  > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
 `

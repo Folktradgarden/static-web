@@ -3,6 +3,7 @@ import React, { FC } from "react"
 import styled from "styled-components"
 import ContactForm from "../components/containers/ContactForm"
 import Layout from "../components/containers/Layout"
+import { Divider } from "../components/presentational/Divider"
 import PageWrapper from "../components/presentational/PageWrapper"
 import { globalWidthBreakpoints } from "../styling/GlobalStyle"
 
@@ -82,13 +83,6 @@ const Paragraph = styled.p`
   margin-top: 0.6rem;
   font-size: 1.2rem;
   color: ${({ theme }) => theme.colors.secondaryDark};
-`
-const Divider = styled.div`
-  height: 0;
-  width: 100%;
-  border-top: solid
-    ${({ theme }) => `${theme.border.width} ${theme.colors.accent}`};
-  margin: 1rem 0;
 `
 
 const FormContainer = styled.div``

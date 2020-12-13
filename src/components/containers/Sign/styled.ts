@@ -81,7 +81,7 @@ export const Paragraph = styled.p`
   }
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    font-size: min(2vw, 2rem);
+    font-size: min(2vw, 28px);
   }
 `
 
@@ -123,7 +123,7 @@ export const Hint = styled.p<HintProps>`
   }
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    font-size: min(2vw, 2.25rem);
+    font-size: min(2vw, 30px);
   }
 `
 export const IconContainer = styled.span`
@@ -135,6 +135,6 @@ export const IconContainer = styled.span`
   }
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    width: min(1.8vw, 2rem);
+    width: min(1.8vw, 26px);
   }
 `
