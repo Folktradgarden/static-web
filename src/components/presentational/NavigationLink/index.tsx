@@ -123,7 +123,11 @@ const NavigationLink: FC<NavigationLinkProps> = ({
       >
         {subPaths.map(path => {
           return (
-            <StyledGatsbyLink to={path.to} onClick={() => closeParent()}>
+            <StyledGatsbyLink
+              key={path.to}
+              to={path.to}
+              onClick={() => closeParent()}
+            >
               <ChildLinkRoot>
                 <ChildIconContainer>{path.icon}</ChildIconContainer>
                 <ChildTextContainer>

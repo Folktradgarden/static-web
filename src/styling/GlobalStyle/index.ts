@@ -72,6 +72,13 @@ const GlobalStyle = createGlobalStyle`
     src: url("../../../fonts/JosefinSlab-Medium.ttf") format("truetype");
   }
 
+  @font-face {
+    font-family: "Josefin Slab";
+    font-weight: 500;
+    font-style: italic;
+    src: url("../../../fonts/JosefinSlab-MediumItalic.ttf") format("truetype");
+  }
+
   * {
     font-family: "Josefin Slab", "Helvetica";
   }

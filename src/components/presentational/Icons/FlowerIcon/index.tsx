@@ -2,11 +2,14 @@ import React, { FC } from "react"
 import { Path, PathColor, SVG, SVGSize } from "../styled"
 
 type FlowerIconProps = {
-  color: PathColor
+  color?: PathColor
   size?: SVGSize
 }
 
-const FlowerIcon: FC<FlowerIconProps> = ({ color, size = "normal" }) => {
+const FlowerIcon: FC<FlowerIconProps> = ({
+  color = "primary",
+  size = "normal",
+}) => {
   return (
     <SVG size={size} viewBox="0 0 474.438 474.438">
       <Path

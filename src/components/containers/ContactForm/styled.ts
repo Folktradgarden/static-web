@@ -22,7 +22,7 @@ export const FieldLabel = styled.label`
 export const ErrorLabel = styled.label`
   font-size: 1rem;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.error};
+  color: ${({ theme }) => theme.colors.accent};
   margin-top: 0.4rem;
   min-height: 1rem;
 `

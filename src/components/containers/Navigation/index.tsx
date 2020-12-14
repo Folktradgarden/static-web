@@ -3,6 +3,7 @@ import React, { FC, useState } from "react"
 import Drawer from "../../presentational/Drawer"
 import BinocularsIcon from "../../presentational/Icons/BinocularsIcon"
 import BookIcon from "../../presentational/Icons/BookIcon"
+import FlowerIcon from "../../presentational/Icons/FlowerIcon"
 import HouseIcon from "../../presentational/Icons/HouseIcon"
 import PaperPlaneIcon from "../../presentational/Icons/PaperPlaneIcon"
 import VideoIcon from "../../presentational/Icons/VideoIcon"
@@ -31,6 +32,11 @@ const links: LinkMeta[] = [
         to: "/#om-oss",
         text: "Om oss",
         icon: <VideoIcon />,
+      },
+      {
+        to: "/#östgötapriset",
+        text: "Östgötapriset",
+        icon: <FlowerIcon />,
       },
     ],
     defaultIsOpen: true,
