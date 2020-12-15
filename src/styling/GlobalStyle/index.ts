@@ -9,15 +9,15 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body {
-    min-height: 100vh;
+    min-height: 100%;
 
     > div {
-      min-height: 100vh;
+      min-height: 100%;
 
       > div {
         display: flex;
         justify-content: center;
-        min-height 100vh;
+        min-height 100%;
       }
     }
 

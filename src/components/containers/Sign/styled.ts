@@ -89,8 +89,8 @@ export const Divider = styled.div`
   width: 100%;
   height: 0;
   border-top: solid
-    ${({ theme }) => `${theme.border.width} ${theme.colors.secondary}`};
-  margin: 0.5rem 0 0.7rem 0;
+    ${({ theme }) => `${theme.border.width} ${theme.colors.accent}`};
+  margin: 0.3rem 0 0.5rem 0;
 `
 type TitleProps = {
   animate: boolean
@@ -98,7 +98,6 @@ type TitleProps = {
 
 export const Title = styled.h2<TitleProps>`
   font-size: 1.6rem;
-  margin-bottom: 0.5rem;
   color: ${({ theme }) => theme.colors.primary};
   text-transform: uppercase;
 

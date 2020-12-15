@@ -24,19 +24,20 @@ const Sign: FC<SignProps> = ({ title, hint, children, divider = false }) => {
     <SignRoot>
       <SignSurface>
         {title && <Title animate={false}>{title}</Title>}
+        <Divider />
         {children && (
           <ParagraphContainer>
             <Paragraph>{children}</Paragraph>
           </ParagraphContainer>
         )}
-        {divider && <Divider />}
+        {/* {divider && <Divider />}
         <Hint animate={false}>
           {`${hint[0]} `}
           <IconContainer>
             <LeafIcon />
           </IconContainer>{" "}
           {` ${hint[1]}`}
-        </Hint>
+        </Hint> */}
       </SignSurface>
       <SignFoot />
     </SignRoot>

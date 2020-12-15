@@ -59,16 +59,12 @@ const Home: FC<PageProps> = ({ location }) => {
             <FTLogo animate />
           </LogoContainer>
           <SignContainer>
-            <Sign
-              divider
-              title={(showTitle && title) || ""}
-              hint={[hintFirst, hintSecond]}
-            >
+            <Sign divider title={title || ""} hint={[hintFirst, hintSecond]}>
               {paragraph.paragraph}
             </Sign>
           </SignContainer>
           <BottomTextContainer>
-            <BottomText>Eller se en video om vår verksamhet!</BottomText>
+            <BottomText></BottomText>
             <ArrowIcon />
           </BottomTextContainer>
         </StartSection>
@@ -200,7 +196,7 @@ const VideoSection = styled.div`
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors.surface};
   width: 100%;
-  min-height: 100vh;
+  min-height: ${getCustomViewportHeight(100)};
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
     flex-direction: row;
@@ -290,7 +286,7 @@ const PriceSection = styled.div`
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors.background};
   width: 100%;
-  min-height: 100vh;
+  min-height: ${getCustomViewportHeight(100)};
 
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
     flex-direction: row;
