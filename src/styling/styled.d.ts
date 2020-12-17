@@ -18,6 +18,7 @@ declare module "styled-components" {
       facebook: string
       instagram: string
       error: string
+      dark: string
     }
     border: {
       radius: string

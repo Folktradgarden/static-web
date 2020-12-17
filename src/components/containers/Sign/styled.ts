@@ -5,50 +5,31 @@ export const SignRoot = styled.div`
   position: relative;
   height: auto;
   width: 95%;
-
-  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    height: 100%;
-  }
+  margin-top: 1rem;
 `
 
 export const SignSurface = styled.div`
   display: flex;
   flex-direction: column;
-  position: absolute;
-  margin-bottom: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 13rem;
   z-index: 1;
-  top: 5%;
-  right: 0;
-  left: 0;
+  width: 100%;
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors.surface};
   padding: 1rem;
   border: solid
     ${({ theme }) => `${theme.border.width} ${theme.colors.secondary}`};
 
-  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
-    top: 10%;
-    min-height: 45%;
-  }
-
-  @media only screen and (min-width: ${globalWidthBreakpoints.md}) {
-    top: 10%;
-    left: 10%;
-    right: 10%;
-    min-height: 45%;
-  }
-
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    top: 15%;
-    left: 5%;
-    right: 5%;
     border-width: min(0.3vw, 4px);
+    margin-bottom: 7rem;
   }
 `
 
 export const SignFoot = styled.div`
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   top: 0;
   bottom: 20%;
   left: 50%;
@@ -56,12 +37,7 @@ export const SignFoot = styled.div`
   width: 15%;
   background-color: ${({ theme }) => theme.colors.secondary};
 
-  @media only screen and (min-width: ${globalWidthBreakpoints.sm}) {
-    top: 5%;
-  }
-
   @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    top: 10%;
     bottom: 0;
   }
 `
@@ -103,6 +79,10 @@ export const Title = styled.h2<TitleProps>`
 
   animation: ${({ animate }) =>
     animate ? "color-text-frames 30s linear" : "none"};
+
+  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
+    font-size: min(2.6vw, 38px);
+  }
 `
 
 type HintProps = {
