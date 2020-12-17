@@ -150,13 +150,6 @@ const SignContainer = styled.div`
   width: 100%;
   padding: 0 1rem 0 1rem;
   box-sizing: border-box;
-
-  @media only screen and (min-width: ${globalWidthBreakpoints.lg}) {
-    width: auto;
-    height: 35vw;
-    max-height: 520px;
-    align-items: center;
-  }
 `
 
 const BottomTextContainer = styled.div`

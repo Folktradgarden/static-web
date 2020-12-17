@@ -1,5 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React, { FC, useState } from "react"
+import { useCookies } from "react-cookie"
+import { navigationCookie } from "../../../constants"
 import Drawer from "../../presentational/Drawer"
 import BinocularsIcon from "../../presentational/Icons/BinocularsIcon"
 import BookIcon from "../../presentational/Icons/BookIcon"
@@ -9,6 +11,7 @@ import PaperPlaneIcon from "../../presentational/Icons/PaperPlaneIcon"
 import VideoIcon from "../../presentational/Icons/VideoIcon"
 import LeafButton from "../../presentational/LeafButton"
 import NavigationLink, { SubPath } from "../../presentational/NavigationLink"
+import NavHintOverlay from "../NavHintOverlay"
 
 type LinkMeta = {
   name: string
@@ -66,9 +69,19 @@ type NavigationProps = {
 const Navigation: FC<NavigationProps> = ({ currentPath }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [animationDuration] = useState<number>(0.5)
+  const [cookies, setCookie] = useCookies([navigationCookie])
+  const haveNavigated = cookies[navigationCookie] !== undefined
+
+  const navToggle = () => {
+    if (!haveNavigated) {
+      setCookie(navigationCookie, 1, { sameSite: true })
+    }
+    setIsOpen(!isOpen)
+  }
 
   return (
     <>
+      <NavHintOverlay isActive={!haveNavigated} />
       <Drawer
         close={() => setIsOpen(false)}
         animationDuration={animationDuration}
@@ -92,7 +105,7 @@ const Navigation: FC<NavigationProps> = ({ currentPath }) => {
           )
         })}
       </Drawer>
-      <LeafButton isActive={isOpen} toggle={() => setIsOpen(!isOpen)} />
+      <LeafButton isActive={isOpen} toggle={() => navToggle()} />
     </>
   )
 }

@@ -17,6 +17,7 @@ const LightTheme: DefaultTheme = {
     facebook: "#05668D",
     instagram: "#FF5A5F",
     error: "#F15156",
+    dark: "#1F1109",
   },
   border: {
     radius: "4px",

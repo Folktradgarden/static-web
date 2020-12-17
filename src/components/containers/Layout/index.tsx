@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, useEffect } from "react"
-import useViewport from "../../../hooks/useViewport"
+import { CookiesProvider } from "react-cookie"
 import GlobalStyle from "../../../styling/GlobalStyle"
 import ThemeWrapper from "../../../styling/ThemeWrapper"
 import { calculateViewportHeight } from "../../../utils/style-utils"
@@ -19,10 +19,12 @@ const Layout: FC<LayoutProps> = ({ children, path }) => {
   return (
     <>
       <ThemeWrapper>
-        <SEO path={path} />
-        <GlobalStyle />
-        <Navigation currentPath={path} />
-        {children}
+        <CookiesProvider>
+          <SEO path={path} />
+          <GlobalStyle />
+          <Navigation currentPath={path} />
+          {children}
+        </CookiesProvider>
       </ThemeWrapper>
     </>
   )
