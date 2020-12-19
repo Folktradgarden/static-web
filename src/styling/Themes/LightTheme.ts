@@ -8,7 +8,7 @@ const LightTheme: DefaultTheme = {
     secondary: "#6E3B21",
     secondaryDark: "#5F321C",
     onSecondary: "#EDE7D4",
-    accent: "#0000FF",
+    accent: "#d17a22",
     surface: "#EDE7D4",
     onSurface: "#5F321C",
     background: "#E7DFC6",
